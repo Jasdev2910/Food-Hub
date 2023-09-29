@@ -41,4 +41,33 @@ const Accordian = ({ data, showMenuItem, showIndex, setShowIndex }) => {
   );
 };
 
+export const FaqAccordian = () => {
+  return (props) => {
+    const [isActive, setISActive] = useState(false);
+    return (
+      <div className="flex-col">
+        <div
+          className="max-w-3xl hover:bg-slate-100 p-5  flex justify-between cursor-pointer"
+          onClick={() => setISActive(!isActive)}
+        >
+          <div>{props.data.title}</div>
+          <div>
+            {isActive ? (
+              <img className="w-4 mr-2" src={UpArrow} alt="up" />
+            ) : (
+              <img className="w-8" src={DownArrow} alt="down" />
+            )}
+          </div>
+        </div>
+        {isActive && (
+          <div className="p-5 max-w-3xl bg-slate-50 rounded-b-xl">
+            {props.data.description}
+          </div>
+        )}
+        <div className="max-w-3xl h-[10px] bg-slate-200 "></div>
+      </div>
+    );
+  };
+};
+
 export default Accordian;
