@@ -45,12 +45,12 @@ export const FaqAccordian = () => {
   return (props) => {
     const [isActive, setISActive] = useState(false);
     return (
-      <div className="flex-col">
+      <div>
         <div
-          className="max-w-3xl hover:bg-slate-100 p-5  flex justify-between cursor-pointer"
+          className=" hover:bg-slate-100 p-5  flex justify-between items-center cursor-pointer"
           onClick={() => setISActive(!isActive)}
         >
-          <div>{props.data.title}</div>
+          <div className="font-Montserrat font-medium">{props.data.title}</div>
           <div>
             {isActive ? (
               <img className="w-4 mr-2" src={UpArrow} alt="up" />
@@ -60,11 +60,11 @@ export const FaqAccordian = () => {
           </div>
         </div>
         {isActive && (
-          <div className="p-5 max-w-3xl bg-slate-50 rounded-b-xl">
+          <div className="font-Montserrat  p-5 max-w-3xl bg-slate-50 rounded-b-xl">
             {props.data.description}
           </div>
         )}
-        <div className="max-w-3xl h-[10px] bg-slate-200 "></div>
+        <div className="max-w-3xl h-[3px] bg-slate-200 "></div>
       </div>
     );
   };
