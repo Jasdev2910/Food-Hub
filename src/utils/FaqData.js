@@ -1,9 +1,9 @@
 export const FaqData = [
   {
     id: 1,
-    title: "What is Swiggy Customer Care Number?",
+    title: "What is Food Hub Customer Care Number?",
     description:
-      "We value our customer’s time and hence moved away from a single customer care number to a comprehensive chat-based support system for quick and easy resolution. You no longer have to go through the maze of an IVRS call support. Just search for your issue in the help section on this page and initiate a chat with us. A customer care executive will be assigned to you shortly. You can also email us your issue on support@swiggy.in\n\nNote: We value your privacy and your information is safe with us. Please do not reveal any personal information, bank account number, OTP etc. to another person. A Swiggy representative will never ask you for these details. Please do not reveal these details to fraudsters and imposters claiming to be calling on our behalf. Be vigilant and do not entertain phishing calls or emails.",
+      "We value our customer’s time and hence moved away from a single customer care number to a comprehensive chat-based support system for quick and easy resolution. You no longer have to go through the maze of an IVRS call support. Just search for your issue in the help section on this page and initiate a chat with us. A customer care executive will be assigned to you shortly. You can also email us your issue on support@food hub.in\n\nNote: We value your privacy and your information is safe with us. Please do not reveal any personal information, bank account number, OTP etc. to another person. A Food Hub representative will never ask you for these details. Please do not reveal these details to fraudsters and imposters claiming to be calling on our behalf. Be vigilant and do not entertain phishing calls or emails.",
     conversationId: null,
     layerConversationId: null,
     ackText: null,
@@ -16,7 +16,7 @@ export const FaqData = [
         phoneNumber: null,
         provider: null,
         waitTime: "We will revert within 24-48 hrs",
-        emailId: "support@swiggy.in",
+        emailId: "support@food hub.in",
       },
     ],
     hyperLinkText: null,
@@ -24,7 +24,7 @@ export const FaqData = [
   },
   {
     id: 494,
-    title: "I want to explore career opportunities with Swiggy",
+    title: "I want to explore career opportunities with Food Hub",
     description: null,
     conversationId: null,
     layerConversationId: null,
@@ -38,11 +38,11 @@ export const FaqData = [
         phoneNumber: null,
         provider: null,
         waitTime: "We will revert within 24-48 hrs",
-        emailId: "careers@swiggy.in",
+        emailId: "careers@food hub.in",
       },
     ],
     hyperLinkText: "Join our team",
-    hyperLink: "https://www.swiggy.com/careers?hide_header=ios_android",
+    hyperLink: "https://www.food hub.com/careers?hide_header=ios_android",
   },
   {
     id: 495,
@@ -60,7 +60,7 @@ export const FaqData = [
         phoneNumber: null,
         provider: null,
         waitTime: "We will revert within 24-48 hrs",
-        emailId: "support@swiggy.in",
+        emailId: "support@food hub.in",
       },
     ],
     hyperLinkText: null,
@@ -98,7 +98,7 @@ export const FaqData = [
   },
   {
     id: 475,
-    title: "Will Swiggy be accountable for quality/quantity? ",
+    title: "Will Food Hub be accountable for quality/quantity? ",
     description:
       "Quantity and quality of the food is the restaurants' responsibility. However in case of issues with the quality or quantity, kindly submit your feedback and we will pass it on to the restaurant.",
     conversationId: null,
@@ -250,7 +250,7 @@ export const FaqData = [
     id: 485,
     title: "Did not receive OTP?",
     description:
-      "Please check if your app is due for an update. If not, please share the details via support@swiggy.in",
+      "Please check if your app is due for an update. If not, please share the details via support@food hub.in",
     conversationId: null,
     layerConversationId: null,
     ackText: null,
@@ -265,7 +265,7 @@ export const FaqData = [
     id: 486,
     title: "Did not receive referral coupon?",
     description:
-      "Referral coupon is given upon the first successful transaction of the referred person. If you still have not received it, kindly send us your details at support@swiggy.in. We will contact you within 48 hours.",
+      "Referral coupon is given upon the first successful transaction of the referred person. If you still have not received it, kindly send us your details at support@food hub.in. We will contact you within 48 hours.",
     conversationId: null,
     layerConversationId: null,
     ackText: null,
@@ -280,7 +280,7 @@ export const FaqData = [
     id: 487,
     title: "Deactivate my account",
     description:
-      "Please write to us at support@swiggy.in in the event that you want to deactivate your account.",
+      "Please write to us at support@food hub.in in the event that you want to deactivate your account.",
     conversationId: null,
     layerConversationId: null,
     ackText: null,
@@ -295,7 +295,7 @@ export const FaqData = [
     id: 488,
     title: "Unable to view the details in my profile",
     description:
-      "Please check if your app is due for an update. If not, please share the details via support@swiggy.in",
+      "Please check if your app is due for an update. If not, please share the details via support@food hub.in",
     conversationId: null,
     layerConversationId: null,
     ackText: null,
@@ -308,9 +308,9 @@ export const FaqData = [
   },
   {
     id: 489,
-    title: "What is Swiggy Money?",
+    title: "What is Food Hub Money?",
     description:
-      "Swiggy Money is a secure digital wallet where you can store digital currency and use it for faster check outs. It prevents payment failures and gives you seamless refunds when necessary.",
+      "Food Hub Money is a secure digital wallet where you can store digital currency and use it for faster check outs. It prevents payment failures and gives you seamless refunds when necessary.",
     conversationId: null,
     layerConversationId: null,
     ackText: null,
