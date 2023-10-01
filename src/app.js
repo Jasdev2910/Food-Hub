@@ -16,6 +16,7 @@ import {
   Outlet,
 } from "react-router-dom";
 import appStore from "./utils/appStore";
+import Footer from "./components/Footer";
 
 // import Groceries from "./components/Groceries";
 
@@ -37,6 +38,7 @@ const App = () => {
         <div>
           <Header />
           <Outlet />
+          <Footer />
         </div>
       </UserContext.Provider>
     </Provider>
