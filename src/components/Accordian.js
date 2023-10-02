@@ -53,7 +53,7 @@ export const FaqAccordian = () => {
           <div className="font-Montserrat font-medium">{props.data.title}</div>
           <div>
             {isActive ? (
-              <img className="w-4 mr-2" src={UpArrow} alt="up" />
+              <img className="w-8" src={UpArrow} alt="up" />
             ) : (
               <img className="w-8" src={DownArrow} alt="down" />
             )}

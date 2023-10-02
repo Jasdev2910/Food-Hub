@@ -3,7 +3,7 @@ import Logo from "../assets/logo.png";
 const Footer = () => {
   const date = new Date().getFullYear();
   return (
-    <div className="p-10 w-[100%] h-[190px] bg-slate-300 ">
+    <div className="mt-10 p-10 w-[100%] h-[190px] bg-slate-300 ">
       <div className="flex justify-evenly list-none text-gray-500">
         <div className="flex">
           <img className="w-28" src={Logo} alt="logo" />
