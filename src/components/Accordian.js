@@ -23,7 +23,7 @@ const Accordian = ({ data, showMenuItem, showIndex, setShowIndex }) => {
         </div>
         <div>
           {showMenuItem ? (
-            <img className="w-4 mr-2" src={UpArrow} alt="up" />
+            <img className="w-8" src={UpArrow} alt="up" />
           ) : (
             <img className="w-8" src={DownArrow} alt="down" />
           )}
@@ -53,9 +53,9 @@ export const FaqAccordian = () => {
           <div className="font-Montserrat font-medium">{props.data.title}</div>
           <div>
             {isActive ? (
-              <img className="w-8" src={UpArrow} alt="up" />
+              <img className="w-8" src={UpArrow} alt="up-arrow" />
             ) : (
-              <img className="w-8" src={DownArrow} alt="down" />
+              <img className="w-8" src={DownArrow} alt="down-arrow" />
             )}
           </div>
         </div>

@@ -1,4 +1,4 @@
-import Accordian, { FaqAccordian } from "./Accordian";
+import { FaqAccordian } from "./Accordian";
 import FaqData from "../utils/FaqData";
 import IllustrationWomen from "../assets/illustration-woman.png";
 
@@ -26,7 +26,7 @@ const Help = () => {
 
           <div className="  mr-20 overflow-y-auto h-96 no-scrollbar">
             {FaqData.map((obj) => (
-              <HelpAccordian data={obj} />
+              <HelpAccordian key={obj.id} data={obj} />
             ))}
           </div>
         </div>
