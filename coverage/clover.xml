@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1696339314383" clover="3.2.0">
-  <project timestamp="1696339314383" name="All files">
-    <metrics statements="37" coveredstatements="23" conditionals="8" coveredconditionals="2" methods="17" coveredmethods="7" elements="62" coveredelements="32" complexity="0" loc="37" ncloc="37" packages="2" files="9" classes="9"/>
+<coverage generated="1696351073567" clover="3.2.0">
+  <project timestamp="1696351073567" name="All files">
+    <metrics statements="45" coveredstatements="30" conditionals="10" coveredconditionals="2" methods="20" coveredmethods="9" elements="75" coveredelements="41" complexity="0" loc="45" ncloc="45" packages="2" files="12" classes="12"/>
     <package name="components">
-      <metrics statements="27" coveredstatements="16" conditionals="8" coveredconditionals="2" methods="14" coveredmethods="7"/>
+      <metrics statements="33" coveredstatements="21" conditionals="10" coveredconditionals="2" methods="17" coveredmethods="9"/>
       <file name="Accordian.js" path="C:\Users\JASDEV\Desktop\Food Hub\src\components\Accordian.js">
         <metrics statements="11" coveredstatements="5" conditionals="8" coveredconditionals="2" methods="6" coveredmethods="2"/>
         <line num="6" count="1" type="stmt"/>
@@ -17,6 +17,15 @@
         <line num="46" count="21" type="stmt"/>
         <line num="47" count="21" type="stmt"/>
         <line num="51" count="0" type="stmt"/>
+      </file>
+      <file name="Header.js" path="C:\Users\JASDEV\Desktop\Food Hub\src\components\Header.js">
+        <metrics statements="6" coveredstatements="5" conditionals="2" coveredconditionals="0" methods="3" coveredmethods="2"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="12" count="2" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="31" count="0" type="cond" truecount="0" falsecount="2"/>
       </file>
       <file name="Help.js" path="C:\Users\JASDEV\Desktop\Food Hub\src\components\Help.js">
         <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
@@ -51,18 +60,26 @@
       </file>
     </package>
     <package name="utils">
-      <metrics statements="10" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0"/>
+      <metrics statements="12" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0"/>
       <file name="FaqData.js" path="C:\Users\JASDEV\Desktop\Food Hub\src\utils\FaqData.js">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
       </file>
+      <file name="UserContext.js" path="C:\Users\JASDEV\Desktop\Food Hub\src\utils\UserContext.js">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="3" count="1" type="stmt"/>
+      </file>
+      <file name="appStore.js" path="C:\Users\JASDEV\Desktop\Food Hub\src\utils\appStore.js">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="3" count="1" type="stmt"/>
+      </file>
       <file name="cartSlice.js" path="C:\Users\JASDEV\Desktop\Food Hub\src\utils\cartSlice.js">
         <metrics statements="5" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0"/>
-        <line num="3" count="1" type="stmt"/>
+        <line num="3" count="2" type="stmt"/>
         <line num="10" count="0" type="stmt"/>
         <line num="13" count="0" type="stmt"/>
         <line num="16" count="0" type="stmt"/>
-        <line num="21" count="1" type="stmt"/>
+        <line num="21" count="2" type="stmt"/>
       </file>
       <file name="constants.js" path="C:\Users\JASDEV\Desktop\Food Hub\src\utils\constants.js">
         <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>

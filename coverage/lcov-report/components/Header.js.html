@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for components/MenuItem.js</title>
+    <title>Code coverage report for components/Header.js</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../prettify.css" />
     <link rel="stylesheet" href="../base.css" />
@@ -19,34 +19,34 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../index.html">All files</a> / <a href="index.html">components</a> MenuItem.js</h1>
+        <h1><a href="../index.html">All files</a> / <a href="index.html">components</a> Header.js</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">16.66% </span>
+                <span class="strong">85.71% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>1/6</span>
-            </div>
-        
-            
-            <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
-                <span class="quiet">Branches</span>
-                <span class='fraction'>0/0</span>
+                <span class='fraction'>6/7</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
-                <span class="quiet">Functions</span>
-                <span class='fraction'>0/3</span>
+                <span class="quiet">Branches</span>
+                <span class='fraction'>0/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">16.66% </span>
+                <span class="strong">66.66% </span>
+                <span class="quiet">Functions</span>
+                <span class='fraction'>2/3</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">83.33% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>1/6</span>
+                <span class='fraction'>5/6</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -111,27 +111,32 @@
 <a name='L46'></a><a href='#L46'>46</a>
 <a name='L47'></a><a href='#L47'>47</a>
 <a name='L48'></a><a href='#L48'>48</a>
-<a name='L49'></a><a href='#L49'>49</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L49'></a><a href='#L49'>49</a>
+<a name='L50'></a><a href='#L50'>50</a>
+<a name='L51'></a><a href='#L51'>51</a>
+<a name='L52'></a><a href='#L52'>52</a>
+<a name='L53'></a><a href='#L53'>53</a>
+<a name='L54'></a><a href='#L54'>54</a>
+<a name='L55'></a><a href='#L55'>55</a>
+<a name='L56'></a><a href='#L56'>56</a>
+<a name='L57'></a><a href='#L57'>57</a>
+<a name='L58'></a><a href='#L58'>58</a>
+<a name='L59'></a><a href='#L59'>59</a>
+<a name='L60'></a><a href='#L60'>60</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -159,54 +164,82 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { useDispatch } from "react-redux";
-import { MENU_ITEM_IMG } from "../utils/constants";
-import { addItem } from "../utils/cartSlice";
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import Logo from "../assets/logo.png";
+import CartImg from "../assets/cart.png";
+import { useContext, useState } from "react";
+import { Link } from "react-router-dom";
+import UserContext from "../utils/UserContext";
+import { useSelector } from "react-redux";
 &nbsp;
-const MenuItem = <span class="fstat-no" title="function not covered" >({</span> menuItem }) =&gt; {
-  const dispatch = <span class="cstat-no" title="statement not covered" >useDispatch();</span>
+const Header = () =&gt; {
+  const [btnName, setBtnName] = useState("Login");
+  const { loggedInUser } = useContext(UserContext);
 &nbsp;
-  const handleAddItem = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(m</span>enuItem) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    dispatch(addItem(menuItem));</span>
-  };
+  const cartItems = useSelector((store) =&gt; store?.cart?.items);
+  // console.log(cartItems);
 &nbsp;
-  // console.log(menuItem);
-<span class="cstat-no" title="statement not covered" >  return (</span>
-    &lt;div className="flex-col"&gt;
-      &lt;div className="flex justify-between my-6 px-3 py-3 "&gt;
-        &lt;div className="resInfo-menu-item-card-deatils w-9/12"&gt;
-          &lt;h3 className="text-base font-medium"&gt;
-            {menuItem?.card?.info?.name}
-          &lt;/h3&gt;
-          &lt;p className="text-base font-light"&gt;
-            {"₹" + menuItem?.card?.info?.price / 100}
-          &lt;/p&gt;
-          &lt;p className="py-2 font-extralight text-sm text-gray-500 "&gt;
-            {menuItem?.card?.info?.description}
-          &lt;/p&gt;
-        &lt;/div&gt;
-        &lt;div className="relative w-3/12"&gt;
-          &lt;div&gt;
-            &lt;img
-              className="w-36 h-24 object-cover rounded-xl m-auto"
-              src={MENU_ITEM_IMG + menuItem?.card?.info?.imageId}
-              alt="img"
-            &gt;&lt;/img&gt;
-          &lt;/div&gt;
-          &lt;button
-            className="absolute w-16 h-8 top-[80px] left-[57px] rounded-lg bg-slate-100 hover:-translate-y-1 transition text-sm hover:outline hover:outline-lime-500 hover:bg-lime-100"
-            onClick={<span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >handleAddItem(menuItem)}</span>
-          &gt;
-            Add+
-          &lt;/button&gt;
-        &lt;/div&gt;
+  return (
+    &lt;nav className="flex justify-between items-center bg-slate-900"&gt;
+      &lt;div className="flex items-center text-2xl font-semibold"&gt;
+        &lt;Link to="/"&gt;
+          &lt;img className="w-20 mr-3" src={Logo} alt="logo"&gt;&lt;/img&gt;
+        &lt;/Link&gt;
+        &lt;h1 className="text-white"&gt;Food Hub&lt;/h1&gt;
       &lt;/div&gt;
-      &lt;div className="my-3 max-w-3xl h-[0.5px] bg-slate-300 "&gt;&lt;/div&gt;
-    &lt;/div&gt;
+      &lt;div className="flex mx-6 text-white text-lg"&gt;
+        &lt;ul className="flex p-6"&gt;
+          &lt;li className="px-6 m-2 cursor-pointer"&gt;
+            &lt;Link to="/offers"&gt;Offers&lt;/Link&gt;
+          &lt;/li&gt;
+          &lt;li
+            className="px-6 m-2 cursor-pointer"
+            onClick={<span class="fstat-no" title="function not covered" >()</span> =&gt; {
+<span class="cstat-no" title="statement not covered" >              btnName === "Login" ? setBtnName("Logout") : setBtnName("Login");</span>
+            }}
+          &gt;
+            {btnName}
+          &lt;/li&gt;
+          &lt;li className="px-6 m-2 cursor-pointer"&gt;
+            &lt;Link to="/help"&gt;Help&lt;/Link&gt;
+          &lt;/li&gt;
+          &lt;li className="px-6 m-2 cursor-pointer"&gt;
+            &lt;Link to="/groceries"&gt;Groceries&lt;/Link&gt;
+          &lt;/li&gt;
+          &lt;li className="px-6 m-2 cursor-pointer"&gt;{loggedInUser}&lt;/li&gt;
+          &lt;Link to="/cart"&gt;
+            &lt;div className="flex items-center"&gt;
+              &lt;img
+                className="w-8 m-2 cursor-pointer"
+                alt="cart-logo"
+                src={CartImg}
+              /&gt;
+              &lt;span&gt;( {cartItems?.length} )&lt;/span&gt;
+            &lt;/div&gt;
+          &lt;/Link&gt;
+        &lt;/ul&gt;
+      &lt;/div&gt;
+    &lt;/nav&gt;
   );
 };
 &nbsp;
-export default MenuItem;
+export default Header;
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->

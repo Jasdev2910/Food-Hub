@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for utils/constants.js</title>
+    <title>Code coverage report for utils/appStore.js</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../prettify.css" />
     <link rel="stylesheet" href="../base.css" />
@@ -19,13 +19,13 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../index.html">All files</a> / <a href="index.html">utils</a> constants.js</h1>
+        <h1><a href="../index.html">All files</a> / <a href="index.html">utils</a> appStore.js</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>4/4</span>
+                <span class='fraction'>1/1</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>4/4</span>
+                <span class='fraction'>1/1</span>
             </div>
         
             
@@ -72,30 +72,24 @@
 <a name='L7'></a><a href='#L7'>7</a>
 <a name='L8'></a><a href='#L8'>8</a>
 <a name='L9'></a><a href='#L9'>9</a>
-<a name='L10'></a><a href='#L10'>10</a>
-<a name='L11'></a><a href='#L11'>11</a>
-<a name='L12'></a><a href='#L12'>12</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L10'></a><a href='#L10'>10</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">export const CDN =
-  "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/";
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { configureStore } from "@reduxjs/toolkit";
+import cartReducer from "./cartSlice";
+const appStore = configureStore({
+  reducer: {
+    cart: cartReducer,
+  },
+});
 &nbsp;
-export const RES_LIST_API =
-  "https://www.swiggy.com/dapi/restaurants/list/v5?lat=21.196971&amp;lng=81.289519&amp;is-seo-homepage-enabled=true&amp;page_type=DESKTOP_WEB_LISTING";
-&nbsp;
-export const MENU_API =
-  "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&amp;complete-menu=true&amp;lat=21.196971&amp;lng=81.289519&amp;restaurantId=";
-&nbsp;
-export const MENU_ITEM_IMG =
-  "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/";
+export default appStore;
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
