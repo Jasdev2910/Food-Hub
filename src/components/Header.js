@@ -25,14 +25,14 @@ const Header = () => {
           <li className="px-6 m-2 cursor-pointer">
             <Link to="/offers">Offers</Link>
           </li>
-          <li
+          <button
             className="px-6 m-2 cursor-pointer"
             onClick={() => {
               btnName === "Login" ? setBtnName("Logout") : setBtnName("Login");
             }}
           >
             {btnName}
-          </li>
+          </button>
           <li className="px-6 m-2 cursor-pointer">
             <Link to="/help">Help</Link>
           </li>
