@@ -10,7 +10,7 @@ const Header = () => {
   const { loggedInUser } = useContext(UserContext);
 
   const cartItems = useSelector((store) => store?.cart?.items);
-  console.log(cartItems);
+  // console.log(cartItems);
 
   return (
     <nav className="flex justify-between items-center bg-slate-900">

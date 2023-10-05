@@ -3,8 +3,8 @@ import StarsIcon from "@mui/icons-material/Stars";
 
 const Card = (props) => {
   const { resData } = props;
-  const { name, avgRating, cuisines, areaName } = resData?.info;
-  console.log(props);
+  // const { name, avgRating, cuisines, areaName } = resData?.info;
+  console.log(resData);
 
   return (
     <div className="flex-col w-[240px] h-72 m-3 px-3 rounded-2xl cursor-pointer hover:shadow-2xl hover:-translate-y-1 transition">
@@ -16,13 +16,19 @@ const Card = (props) => {
         />
       </div>
       <div className="py-2">
-        <h2 className="text-left font-semibold text-xl line-clamp-1">{name}</h2>
+        <h2 className="text-left font-semibold text-xl line-clamp-1">
+          {resData?.info?.name}
+        </h2>
         <h3 className="text-left font-normal ">
           <StarsIcon className="text-green-600 mr-1 medium" />
-          {avgRating}/5
+          {resData?.info?.avgRating}/5
         </h3>
-        <h4 className="text-left line-clamp-1">{cuisines.join(", ")}</h4>
-        <h4 className="text-left overflow-hidden ">{areaName}</h4>
+        <h4 className="text-left line-clamp-1">
+          {resData?.info?.cuisines.join(", ")}
+        </h4>
+        <h4 className="text-left overflow-hidden ">
+          {resData?.info?.areaName}
+        </h4>
       </div>
     </div>
   );
