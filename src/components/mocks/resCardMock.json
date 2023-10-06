@@ -1,23 +1,24 @@
 {
   "info": {
-    "id": "99142",
-    "name": "Arjun Da Dhaba - Pure Veg",
-    "cloudinaryImageId": "de96dyjxve1hpceq4ay7",
+    "id": "450249",
+    "name": "The Biryani Life",
+    "cloudinaryImageId": "ca2147e6d0699a2f55006432c9bb59a8",
     "locality": "Kohka",
-    "areaName": "Junwani Road",
-    "costForTwo": "₹200 for two",
+    "areaName": "Durg Bhilai",
+    "costForTwo": "₹400 for two",
     "cuisines": [
-      "North Indian",
-      "Chinese",
       "Biryani",
-      "Indian",
-      "Snacks",
-      "Fast Food"
+      "Mughlai",
+      "Lucknowi",
+      "Hyderabadi",
+      "North Indian",
+      "Kebabs",
+      "Desserts",
+      "Beverages"
     ],
-    "avgRating": 3.7,
-    "veg": true,
+    "avgRating": 3.8,
     "feeDetails": {
-      "restaurantId": "99142",
+      "restaurantId": "450249",
       "fees": [
         {
           "name": "BASE_DISTANCE",
@@ -32,51 +33,31 @@
       ],
       "totalFee": 3600
     },
-    "parentId": "35927",
-    "avgRatingString": "3.7",
-    "totalRatingsString": "5K+",
+    "parentId": "8496",
+    "avgRatingString": "3.8",
+    "totalRatingsString": "100+",
     "sla": {
-      "deliveryTime": 25,
-      "lastMileTravel": 6.2,
+      "deliveryTime": 31,
+      "lastMileTravel": 6.6,
       "serviceability": "SERVICEABLE",
-      "slaString": "25 mins",
-      "lastMileTravelString": "6.2 km",
+      "slaString": "31 mins",
+      "lastMileTravelString": "6.6 km",
       "iconType": "ICON_TYPE_EMPTY"
     },
     "availability": {
-      "nextCloseTime": "2023-10-05 23:59:00",
+      "nextCloseTime": "2023-10-06 23:59:00",
       "opened": true
     },
-    "badges": {
-      "imageBadges": [
-        {
-          "imageId": "v1695133679/badges/Pure_Veg111.png",
-          "description": "pureveg"
-        }
-      ]
-    },
+    "badges": {},
     "isOpen": true,
+    "aggregatedDiscountInfoV2": {},
     "type": "F",
     "badgesV2": {
       "entityBadges": {
-        "imageBased": {
-          "badgeObject": [
-            {
-              "attributes": {
-                "description": "pureveg",
-                "imageId": "v1695133679/badges/Pure_Veg111.png"
-              }
-            }
-          ]
-        },
+        "imageBased": {},
         "textBased": {},
         "textExtendedBadges": {}
       }
-    },
-    "aggregatedDiscountInfoV3": {
-      "header": "₹125 OFF",
-      "subHeader": "ABOVE ₹249",
-      "discountTag": "FLAT DEAL"
     },
     "differentiatedUi": {
       "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
@@ -92,7 +73,7 @@
   },
   "analytics": {},
   "cta": {
-    "link": "https://www.swiggy.com/restaurants/arjun-da-dhaba-pure-veg-kohka-junwani-road-bhilai-99142",
+    "link": "https://www.swiggy.com/restaurants/the-biryani-life-kohka-durg-bhilai-bhilai-450249",
     "type": "WEBLINK"
   }
 }

@@ -20,7 +20,7 @@ const Body = () => {
   const fetchData = async () => {
     const response = await fetch(RES_LIST_API);
     const json = await response.json();
-    console.log(json);
+    // console.log(json);
     setListOfRes(
       json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
@@ -46,6 +46,7 @@ const Body = () => {
           <input
             className="w-[100%] px-6 py-4 bg-transparent border-none outline-none"
             type="text"
+            data-testid="searchInput"
             placeholder="Search Restauraunts"
             value={searchText}
             onChange={(e) => {
@@ -55,6 +56,7 @@ const Body = () => {
           <button
             className="w-14 "
             type="search"
+            aria-label="search"
             onClick={() => {
               const filteredList = listOfRes?.filter((res) =>
                 res?.info?.name

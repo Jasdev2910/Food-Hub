@@ -4,10 +4,13 @@ import StarsIcon from "@mui/icons-material/Stars";
 const Card = (props) => {
   const { resData } = props;
   // const { name, avgRating, cuisines, areaName } = resData?.info;
-  console.log(resData);
+  // console.log(resData);
 
   return (
-    <div className="flex-col w-[240px] h-72 m-3 px-3 rounded-2xl cursor-pointer hover:shadow-2xl hover:-translate-y-1 transition">
+    <div
+      data-testid="resCard"
+      className="flex-col w-[240px] h-72 m-3 px-3 rounded-2xl cursor-pointer hover:shadow-2xl hover:-translate-y-1 transition"
+    >
       <div className="bg-gradient-to-t from-black from-99.9%% rounded-3xl opacity-95">
         <img
           className="w-[240px] h-[170px] rounded-3xl mix-blend-overlay saturate-150"
