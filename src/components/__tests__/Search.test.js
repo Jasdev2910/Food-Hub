@@ -41,3 +41,25 @@ it("Should Search res List for pizza text input", async () => {
 
   expect(cardsAfterSearch.length).toBe(4);
 });
+
+it("Should Search filtred restaurants", async () => {
+  await act(async () =>
+    render(
+      <BrowserRouter>
+        <Body />
+      </BrowserRouter>
+    )
+  );
+
+  const cardsBeforeFilter = screen.getAllByTestId("resCard");
+
+  expect(cardsBeforeFilter.length).toBe(20);
+
+  const filterBtn = screen.getByRole("button", { name: "Filter" });
+
+  fireEvent.click(filterBtn);
+
+  const cardsAfterFilter = screen.getAllByTestId("resCard");
+
+  expect(cardsAfterFilter.length).toBe(8);
+});
