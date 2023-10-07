@@ -14,7 +14,7 @@ const Cart = () => {
     dispatch(clearCart());
   };
 
-  console.log(cartItems);
+  // console.log(cartItems);
 
   return (
     <div className="flex px-9 py-6">

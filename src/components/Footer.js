@@ -13,7 +13,7 @@ const Footer = () => {
           </h1>
         </div>
         <div>
-          <h1 className="text-lg font-bold ">Comapny</h1>
+          <h1 className="text-lg font-bold ">Company</h1>
           <li className="hover:text-gray-700">About</li>
           <li className="hover:text-gray-700">Team</li>
           <li className="hover:text-gray-700">Offers</li>
