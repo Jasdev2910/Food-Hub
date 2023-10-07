@@ -11,7 +11,7 @@ const MenuItem = ({ menuItem }) => {
 
   // console.log(menuItem);
   return (
-    <div className="flex-col">
+    <div data-testid="foodItems" className="flex-col">
       <div className="flex justify-between my-6 px-3 py-3 ">
         <div className="resInfo-menu-item-card-deatils w-9/12">
           <h3 className="text-base font-medium">
