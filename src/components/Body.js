@@ -5,29 +5,36 @@ import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import { RES_LIST_API } from "../utils/constants";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import useRestaurantList from "../utils/useRestaurantList";
+import Carousel from "./Carousel";
 
 const Body = () => {
-  const [listOfRes, setListOfRes] = useState([]);
-  const [filteredrestaurant, setFilteredRestaurant] = useState([]);
+  // const [listOfRes, setListOfRes] = useState([]);
+  // const [filteredRestaurant, setFilteredRestaurant] = useState([]);
   const [searchText, setSerachText] = useState("");
   const onlineStatus = useOnlineStatus();
   const CardWithOffer = withOfferLabel(Card);
+  const restaurantData = useRestaurantList(); // custom hook for list of restauranrt
+  const restaurantList =
+    restaurantData[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
+  console.log(restaurantData);
+  // console.log(filteredRestaurant);
 
-  useEffect(() => {
-    fetchData();
-  }, []);
+  // useEffect(() => {
+  //   fetchData();
+  // }, []);
 
-  const fetchData = async () => {
-    const response = await fetch(RES_LIST_API);
-    const json = await response.json();
-    // console.log(json);
-    setListOfRes(
-      json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
-    );
-    setFilteredRestaurant(
-      json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
-    );
-  };
+  // const fetchData = async () => {
+  //   const response = await fetch(RES_LIST_API);
+  //   const json = await response.json();
+  //   // console.log(json);
+  //   setListOfRes(
+  //     json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+  //   );
+  //   setFilteredRestaurant(
+  //     json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+  //   );
+  // };
 
   if (onlineStatus === false) {
     return (
@@ -37,7 +44,7 @@ const Body = () => {
     );
   }
 
-  return listOfRes?.length === 0 ? (
+  return restaurantList?.length === 0 ? (
     <Shimmer />
   ) : (
     <div className="flex-col ">
@@ -58,7 +65,7 @@ const Body = () => {
             type="search"
             aria-label="search"
             onClick={() => {
-              const filteredList = listOfRes?.filter((res) =>
+              const filteredList = restaurantList?.filter((res) =>
                 res?.info?.name
                   ?.toLowerCase()
                   ?.includes(searchText?.toLowerCase())
@@ -73,7 +80,7 @@ const Body = () => {
           <button
             className="px-8 py-2 rounded-full bg-gray-100 hover:bg-gray-900 hover:text-white hover:shadow-2xl hover:-translate-y-1 transition"
             onClick={() => {
-              const newResList = filteredrestaurant?.filter(
+              const newResList = restaurantList?.filter(
                 (res) => res?.info?.avgRating > 4
               );
               setFilteredRestaurant(newResList);
@@ -83,6 +90,9 @@ const Body = () => {
           </button>
         </div>
       </div>
+      <div className="w-90% h-52 p-8">
+        <Carousel />
+      </div>
       <div>
         <h2 className="text-2xl font-semibold ml-28 pb-4">
           Restauraunts in Your Area
@@ -90,7 +100,7 @@ const Body = () => {
       </div>
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-wrap flex-row justify-between px-8 ">
-          {filteredrestaurant?.map((restaurant) => (
+          {restaurantList?.map((restaurant) => (
             <Link
               key={restaurant?.info?.id}
               to={"/restaurant/" + restaurant?.info?.id}
