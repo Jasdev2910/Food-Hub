@@ -1,5 +1,7 @@
 import CarouselImg from "./CarouselImg";
 import useRestaurantList from "../utils/useRestaurantList";
+import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
+import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 
 const Carousel = () => {
   const restaurantList = useRestaurantList();
@@ -16,21 +18,21 @@ const Carousel = () => {
   };
 
   return (
-    <div>
-      <div>
+    <div className="px-28 pb-11 ">
+      <div className="text-2xl font-semibold">
         <h2>{restaurantList[1]?.card?.card?.header?.title}</h2>
       </div>
-      <div className="flex justify-between ">
-        <button onClick={btnPressPrev} className="prevBtn">
-          <p>-</p>
+      <div className=" flex justify-between ">
+        <button onClick={btnPressPrev} className="">
+          <ArrowBackIosIcon />
         </button>
 
-        <div className="flex overflow-hidden overflow-x-hidden">
+        <div className=" container scroll-smooth flex items-center overflow-hidden overflow-x-hidden">
           <CarouselImg list={restaurantList} />
         </div>
 
         <button onClick={btnPressNext} className="nextBtn">
-          <p>+</p>
+          <ArrowForwardIosIcon />
         </button>
       </div>
     </div>

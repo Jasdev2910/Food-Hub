@@ -90,15 +90,14 @@ const Body = () => {
           </button>
         </div>
       </div>
-      <div className="w-90% h-52 p-8">
+      <div>
         <Carousel />
       </div>
-      <div>
-        <h2 className="text-2xl font-semibold ml-28 pb-4">
+      <div></div>
+      <div className="max-w-6xl mx-auto">
+        <h2 className="text-2xl font-semibold ml-14 pb-4">
           Restauraunts in Your Area
         </h2>
-      </div>
-      <div className="max-w-6xl mx-auto">
         <div className="flex flex-wrap flex-row justify-between px-8 ">
           {restaurantList?.map((restaurant) => (
             <Link

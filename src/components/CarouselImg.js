@@ -4,12 +4,13 @@ const CarouselImg = (props) => {
   console.log(props);
   {
     return props?.list[1]?.card?.card?.imageGridCards?.info?.map((item) => (
-      <div className="card">
+      <div className="mx-6  min-w-[150px] box-border cursor-pointer">
         <div>
-          <img src={CAROUSEL_IMG + item.imageId} alt="carousel-img" />
-        </div>
-        <div>
-          <h3>{item.action.text}</h3>
+          <img
+            className=""
+            src={CAROUSEL_IMG + item.imageId}
+            alt="carousel-img"
+          />
         </div>
       </div>
     ));
