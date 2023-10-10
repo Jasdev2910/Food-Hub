@@ -12,3 +12,6 @@ export const MENU_ITEM_IMG =
 
 export const CAROUSEL_IMG =
   "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/";
+
+export const WIDGET_CAROUSEL =
+  "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_850,h_504/";

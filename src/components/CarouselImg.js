@@ -1,10 +1,10 @@
-import { CAROUSEL_IMG } from "../utils/constants";
+// import { CAROUSEL_IMG } from "../utils/constants";
 
-const CarouselImg = (props) => {
-  console.log(props);
+const CarouselImg = ({ data, CAROUSEL_IMG, minWidth }) => {
+  // console.log(props);
   {
-    return props?.list[1]?.card?.card?.imageGridCards?.info?.map((item) => (
-      <div className="mx-6  min-w-[150px] box-border cursor-pointer">
+    return data?.card?.card?.imageGridCards?.info?.map((item) => (
+      <div className={`mx-6  ${minWidth} box-border cursor-pointer`}>
         <div>
           <img
             className=""
@@ -18,3 +18,6 @@ const CarouselImg = (props) => {
 };
 
 export default CarouselImg;
+
+// {props.list[0].card.card.["@type"] ===
+// "type.googleapis.com/swiggy.gandalf.widgets.v2.GridWidget"}
