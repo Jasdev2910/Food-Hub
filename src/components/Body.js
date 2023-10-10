@@ -7,6 +7,8 @@ import { RES_LIST_API } from "../utils/constants";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import useRestaurantList from "../utils/useRestaurantList";
 import Carousel from "./Carousel";
+import { CAROUSEL_IMG } from "../utils/constants";
+import { WIDGET_CAROUSEL } from "../utils/constants";
 
 const Body = () => {
   // const [listOfRes, setListOfRes] = useState([]);
@@ -17,7 +19,7 @@ const Body = () => {
   const restaurantData = useRestaurantList(); // custom hook for list of restauranrt
   const restaurantList =
     restaurantData[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
-  console.log(restaurantData);
+  console.log(restaurantList);
   // console.log(filteredRestaurant);
 
   // useEffect(() => {
@@ -47,8 +49,8 @@ const Body = () => {
   return restaurantList?.length === 0 ? (
     <Shimmer />
   ) : (
-    <div className="flex-col ">
-      <div className="flex items-center justify-between p-12">
+    <div className="flex-col mx-24">
+      <div className="flex items-center justify-between p-10">
         <div className="flex w-[100%] bg-gray-100 mx-40 rounded-full hover:shadow-xl hover:-translate-y-1 transition">
           <input
             className="w-[100%] px-6 py-4 bg-transparent border-none outline-none"
@@ -91,23 +93,61 @@ const Body = () => {
         </div>
       </div>
       <div>
-        <Carousel />
+        <h2 className="text-2xl font-semibold ml-14 pb-4">
+          Best Offers for you
+        </h2>
+        <Carousel
+          data={restaurantData[0]}
+          CAROUSEL_IMG={WIDGET_CAROUSEL}
+          minWidth="min-w-[350px]"
+          overflow="overflow-x-scroll"
+        />
       </div>
-      <div></div>
-      <div className="max-w-6xl mx-auto">
+      <div>
+        <div className="text-2xl font-semibold ml-14 pb-4">
+          <h2>{restaurantData[1]?.card?.card?.header?.title}</h2>
+        </div>
+        <Carousel
+          data={restaurantData[1]}
+          CAROUSEL_IMG={CAROUSEL_IMG}
+          minWidth={`min-w-[150px]`}
+          overflow="overflow-x-scroll"
+        />
+      </div>
+      <div className=" mx-auto">
         <h2 className="text-2xl font-semibold ml-14 pb-4">
           Restauraunts in Your Area
         </h2>
-        <div className="flex flex-wrap flex-row justify-between px-8 ">
+        <div className="flex flex-wrap flex-row justify-between px-4 ">
           {restaurantList?.map((restaurant) => (
             <Link
               key={restaurant?.info?.id}
               to={"/restaurant/" + restaurant?.info?.id}
             >
               {restaurant?.info?.aggregatedDiscountInfoV3 === undefined ? (
-                <Card resData={restaurant} />
+                <Card
+                  resData={restaurant}
+                  imageId={restaurant?.info?.cloudinaryImageId}
+                  name={restaurant?.info?.name}
+                  avgRating={restaurant?.info?.avgRating}
+                  cuisines={restaurant?.info?.cuisines}
+                  areaName={restaurant?.info?.areaName}
+                />
               ) : (
-                <CardWithOffer resData={restaurant} />
+                <CardWithOffer
+                  resData={restaurant}
+                  imageId={restaurant?.info?.cloudinaryImageId}
+                  name={restaurant?.info?.name}
+                  avgRating={restaurant?.info?.avgRating}
+                  cuisines={restaurant?.info?.cuisines}
+                  areaName={restaurant?.info?.areaName}
+                  labelHeader={
+                    restaurant?.info?.aggregatedDiscountInfoV3?.header
+                  }
+                  labelSubHeader={
+                    restaurant?.info?.aggregatedDiscountInfoV3?.subHeader
+                  }
+                />
               )}
             </Link>
           ))}
