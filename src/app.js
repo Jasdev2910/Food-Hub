@@ -17,6 +17,8 @@ import {
 } from "react-router-dom";
 import appStore from "./utils/appStore";
 import Footer from "./components/Footer";
+import CarouselItems from "./components/CarouselItems";
+import { Carousel } from "bootstrap";
 
 // import Groceries from "./components/Groceries";
 
@@ -77,6 +79,10 @@ const appRouter = createBrowserRouter([
       {
         path: "/cart",
         element: <Cart />,
+      },
+      {
+        path: "/CarouselItems/:entityId",
+        element: <CarouselItems />,
       },
     ],
     errorElement: <Error />,
