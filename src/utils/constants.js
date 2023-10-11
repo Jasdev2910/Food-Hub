@@ -15,3 +15,6 @@ export const CAROUSEL_IMG =
 
 export const WIDGET_CAROUSEL =
   "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_850,h_504/";
+
+export const PIZZA_API =
+  "https://www.swiggy.com/dapi/restaurants/list/v5?lat=21.196971&lng=81.289519&collection=";

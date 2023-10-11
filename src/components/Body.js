@@ -46,7 +46,7 @@ const Body = () => {
     );
   }
 
-  return restaurantList?.length === 0 ? (
+  return restaurantList?.length === undefined ? (
     <Shimmer />
   ) : (
     <div className="flex-col mx-24">
@@ -126,7 +126,6 @@ const Body = () => {
             >
               {restaurant?.info?.aggregatedDiscountInfoV3 === undefined ? (
                 <Card
-                  resData={restaurant}
                   imageId={restaurant?.info?.cloudinaryImageId}
                   name={restaurant?.info?.name}
                   avgRating={restaurant?.info?.avgRating}
@@ -135,7 +134,6 @@ const Body = () => {
                 />
               ) : (
                 <CardWithOffer
-                  resData={restaurant}
                   imageId={restaurant?.info?.cloudinaryImageId}
                   name={restaurant?.info?.name}
                   avgRating={restaurant?.info?.avgRating}
