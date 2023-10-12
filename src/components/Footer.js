@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Logo from "../assets/logo.png";
 
 const Footer = () => {
@@ -16,11 +17,16 @@ const Footer = () => {
           <h1 className="text-lg font-bold ">Company</h1>
           <li className="hover:text-gray-700">About</li>
           <li className="hover:text-gray-700">Team</li>
-          <li className="hover:text-gray-700">Offers</li>
+          <Link to="/offers">
+            <li className="hover:text-gray-700">Offers</li>
+          </Link>
         </div>
         <div>
           <h1 className="text-lg font-bold ">Contact Us</h1>
-          <li className="hover:text-gray-700">Help & Support</li>
+          <Link to="/help">
+            {" "}
+            <li className="hover:text-gray-700">Help & Support</li>
+          </Link>
           <li className="hover:text-gray-700">Partner with us</li>
           <li className="hover:text-gray-700">Ride with us</li>
         </div>

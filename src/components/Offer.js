@@ -1,7 +1,11 @@
 import OfferCard from "./OfferCard";
 import React from "react";
+import { useEffect } from "react";
 
 const Offer = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div>
       <h1>Offers Available</h1>

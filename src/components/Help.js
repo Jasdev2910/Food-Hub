@@ -1,9 +1,14 @@
 import { FaqAccordian } from "./Accordian";
+import { useEffect } from "react";
 import FaqData from "../utils/FaqData";
 import IllustrationWomen from "../assets/illustration-woman.png";
 
 const Help = () => {
   const HelpAccordian = FaqAccordian();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="p-5 felx-col">
       <h1 className="px-5 pt-5 text-2xl font-Montserrat font-bold">
