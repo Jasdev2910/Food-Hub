@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import useRestaurantList from "../utils/useRestaurantList";
 import { Link } from "react-router-dom";
 import Card, { withOfferLabel } from "./Card";
+import Shimmer from "./Shimmer";
 
 const Pizza = () => {
   const [list, setList] = useState([]);
@@ -15,6 +16,7 @@ const Pizza = () => {
 
   useEffect(() => {
     fetchData();
+    window.scrollTo(0, 0);
   }, []);
 
   const fetchData = async () => {
@@ -30,7 +32,9 @@ const Pizza = () => {
     setList(json?.data?.cards);
   };
 
-  return (
+  return list?.length === 0 ? (
+    <Shimmer />
+  ) : (
     <div className="px-20 py-5">
       <div className="m-10">
         <h1 className="text-4xl font-medium">{list[0]?.card?.card?.title}</h1>

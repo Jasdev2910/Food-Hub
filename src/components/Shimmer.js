@@ -1,65 +1,85 @@
 const Shimmer = () => {
   return (
-    <div className="shimmer-container">
-      <div className="shimmer-card">
-        <div className="shimmer-img"></div>
-        <div className="shimmer-p"></div>
-        <div className="shimmer-p"></div>
+    <div className="flex flex-wrap justify-center p-5 ">
+      <div className="w-[250px] m-3 p-3 flex-col">
+        <div className="m-auto w-[230px] h-[170px] rounded-2xl bg-gray-200"></div>
+        <div className="w-[210px] h-[20px] mt-[15px] rounded-2xl bg-gray-300"></div>
+        <div className="w-[210px] h-[20px] mt-[15px] rounded-2xl bg-gray-300"></div>
       </div>
-      <div className="shimmer-card">
-        <div className="shimmer-img"></div>
-        <div className="shimmer-p"></div>
-        <div className="shimmer-p"></div>
+      <div className="w-[250px] m-3 p-3 flex-col">
+        <div className="m-auto w-[230px] h-[170px] rounded-2xl bg-gray-200"></div>
+        <div className="w-[210px] h-[20px] mt-[15px] rounded-2xl bg-gray-300"></div>
+        <div className="w-[210px] h-[20px] mt-[15px] rounded-2xl bg-gray-300"></div>
       </div>
-      <div className="shimmer-card">
-        <div className="shimmer-img"></div>
-        <div className="shimmer-p"></div>
-        <div className="shimmer-p"></div>
+      <div className="w-[250px] m-3 p-3 flex-col">
+        <div className="m-auto w-[230px] h-[170px] rounded-2xl bg-gray-200"></div>
+        <div className="w-[210px] h-[20px] mt-[15px] rounded-2xl bg-gray-300"></div>
+        <div className="w-[210px] h-[20px] mt-[15px] rounded-2xl bg-gray-300"></div>
       </div>
-      <div className="shimmer-card">
-        <div className="shimmer-img"></div>
-        <div className="shimmer-p"></div>
-        <div className="shimmer-p"></div>
+      <div className="w-[250px] m-3 p-3 flex-col">
+        <div className="m-auto w-[230px] h-[170px] rounded-2xl bg-gray-200"></div>
+        <div className="w-[210px] h-[20px] mt-[15px] rounded-2xl bg-gray-300"></div>
+        <div className="w-[210px] h-[20px] mt-[15px] rounded-2xl bg-gray-300"></div>
       </div>
-      <div className="shimmer-card">
-        <div className="shimmer-img"></div>
-        <div className="shimmer-p"></div>
-        <div className="shimmer-p"></div>
+      <div className="w-[250px] m-3 p-3 flex-col">
+        <div className="m-auto w-[230px] h-[170px] rounded-2xl bg-gray-200"></div>
+        <div className="w-[210px] h-[20px] mt-[15px] rounded-2xl bg-gray-300"></div>
+        <div className="w-[210px] h-[20px] mt-[15px] rounded-2xl bg-gray-300"></div>
       </div>
-      <div className="shimmer-card">
-        <div className="shimmer-img"></div>
-        <div className="shimmer-p"></div>
-        <div className="shimmer-p"></div>
+      <div className="w-[250px] m-3 p-3 flex-col">
+        <div className="m-auto w-[230px] h-[170px] rounded-2xl bg-gray-200"></div>
+        <div className="w-[210px] h-[20px] mt-[15px] rounded-2xl bg-gray-300"></div>
+        <div className="w-[210px] h-[20px] mt-[15px] rounded-2xl bg-gray-300"></div>
       </div>
-      <div className="shimmer-card">
-        <div className="shimmer-img"></div>
-        <div className="shimmer-p"></div>
-        <div className="shimmer-p"></div>
+      <div className="w-[250px] m-3 p-3 flex-col">
+        <div className="m-auto w-[230px] h-[170px] rounded-2xl bg-gray-200"></div>
+        <div className="w-[210px] h-[20px] mt-[15px] rounded-2xl bg-gray-300"></div>
+        <div className="w-[210px] h-[20px] mt-[15px] rounded-2xl bg-gray-300"></div>
       </div>
-      <div className="shimmer-card">
-        <div className="shimmer-img"></div>
-        <div className="shimmer-p"></div>
-        <div className="shimmer-p"></div>
+      <div className="w-[250px] m-3 p-3 flex-col">
+        <div className="m-auto w-[230px] h-[170px] rounded-2xl bg-gray-200"></div>
+        <div className="w-[210px] h-[20px] mt-[15px] rounded-2xl bg-gray-300"></div>
+        <div className="w-[210px] h-[20px] mt-[15px] rounded-2xl bg-gray-300"></div>
       </div>
-      <div className="shimmer-card">
-        <div className="shimmer-img"></div>
-        <div className="shimmer-p"></div>
-        <div className="shimmer-p"></div>
+      <div className="w-[250px] m-3 p-3 flex-col">
+        <div className="m-auto w-[230px] h-[170px] rounded-2xl bg-gray-200"></div>
+        <div className="w-[210px] h-[20px] mt-[15px] rounded-2xl bg-gray-300"></div>
+        <div className="w-[210px] h-[20px] mt-[15px] rounded-2xl bg-gray-300"></div>
       </div>
-      <div className="shimmer-card">
-        <div className="shimmer-img"></div>
-        <div className="shimmer-p"></div>
-        <div className="shimmer-p"></div>
+      <div className="w-[250px] m-3 p-3 flex-col">
+        <div className="m-auto w-[230px] h-[170px] rounded-2xl bg-gray-200"></div>
+        <div className="w-[210px] h-[20px] mt-[15px] rounded-2xl bg-gray-300"></div>
+        <div className="w-[210px] h-[20px] mt-[15px] rounded-2xl bg-gray-300"></div>
       </div>
-      <div className="shimmer-card">
-        <div className="shimmer-img"></div>
-        <div className="shimmer-p"></div>
-        <div className="shimmer-p"></div>
+      <div className="w-[250px] m-3 p-3 flex-col">
+        <div className="m-auto w-[230px] h-[170px] rounded-2xl bg-gray-200"></div>
+        <div className="w-[210px] h-[20px] mt-[15px] rounded-2xl bg-gray-300"></div>
+        <div className="w-[210px] h-[20px] mt-[15px] rounded-2xl bg-gray-300"></div>
       </div>
-      <div className="shimmer-card">
-        <div className="shimmer-img"></div>
-        <div className="shimmer-p"></div>
-        <div className="shimmer-p"></div>
+      <div className="w-[250px] m-3 p-3 flex-col">
+        <div className="m-auto w-[230px] h-[170px] rounded-2xl bg-gray-200"></div>
+        <div className="w-[210px] h-[20px] mt-[15px] rounded-2xl bg-gray-300"></div>
+        <div className="w-[210px] h-[20px] mt-[15px] rounded-2xl bg-gray-300"></div>
+      </div>
+      <div className="w-[250px] m-3 p-3 flex-col">
+        <div className="m-auto w-[230px] h-[170px] rounded-2xl bg-gray-200"></div>
+        <div className="w-[210px] h-[20px] mt-[15px] rounded-2xl bg-gray-300"></div>
+        <div className="w-[210px] h-[20px] mt-[15px] rounded-2xl bg-gray-300"></div>
+      </div>
+      <div className="w-[250px] m-3 p-3 flex-col">
+        <div className="m-auto w-[230px] h-[170px] rounded-2xl bg-gray-200"></div>
+        <div className="w-[210px] h-[20px] mt-[15px] rounded-2xl bg-gray-300"></div>
+        <div className="w-[210px] h-[20px] mt-[15px] rounded-2xl bg-gray-300"></div>
+      </div>
+      <div className="w-[250px] m-3 p-3 flex-col">
+        <div className="m-auto w-[230px] h-[170px] rounded-2xl bg-gray-200"></div>
+        <div className="w-[210px] h-[20px] mt-[15px] rounded-2xl bg-gray-300"></div>
+        <div className="w-[210px] h-[20px] mt-[15px] rounded-2xl bg-gray-300"></div>
+      </div>
+      <div className="w-[250px] m-3 p-3 flex-col">
+        <div className="m-auto w-[230px] h-[170px] rounded-2xl bg-gray-200"></div>
+        <div className="w-[210px] h-[20px] mt-[15px] rounded-2xl bg-gray-300"></div>
+        <div className="w-[210px] h-[20px] mt-[15px] rounded-2xl bg-gray-300"></div>
       </div>
     </div>
   );
