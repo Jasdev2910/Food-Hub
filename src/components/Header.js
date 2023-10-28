@@ -4,6 +4,10 @@ import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import UserContext from "../utils/UserContext";
 import { useSelector } from "react-redux";
+import { IconButton } from "@mui/material";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import Badge from "@mui/material/Badge";
+import { styled } from "@mui/material/styles";
 
 const Header = () => {
   const [btnName, setBtnName] = useState("Login");
@@ -11,6 +15,15 @@ const Header = () => {
 
   const cartItems = useSelector((store) => store?.cart?.items);
   // console.log(cartItems);
+
+  const StyledBadge = styled(Badge)(({ theme }) => ({
+    "& .MuiBadge-badge": {
+      right: -3,
+      top: 13,
+      border: `2px solid ${theme.palette.background.paper}`,
+      padding: "0 4px",
+    },
+  }));
 
   return (
     <nav className="flex justify-between items-center bg-slate-900">
@@ -42,12 +55,16 @@ const Header = () => {
           <li className="px-6 m-2 cursor-pointer">{loggedInUser}</li>
           <Link to="/cart">
             <div className="flex items-center">
-              <img
+              {/* <img
                 className="w-8 m-2 cursor-pointer"
                 alt="cart-logo"
                 src={CartImg}
-              />
-              <span>( {cartItems?.length} )</span>
+              /> */}
+              <IconButton aria-label="cart">
+                <StyledBadge badgeContent={cartItems?.length} color="secondary">
+                  <ShoppingCartIcon className=" m-1 text-white" />
+                </StyledBadge>
+              </IconButton>
             </div>
           </Link>
         </ul>
