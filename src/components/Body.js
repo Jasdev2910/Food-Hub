@@ -12,31 +12,17 @@ import { WIDGET_CAROUSEL } from "../utils/constants";
 
 const Body = () => {
   // const [listOfRes, setListOfRes] = useState([]);
-  // const [filteredRestaurant, setFilteredRestaurant] = useState([]);
-  const [searchText, setSerachText] = useState("");
+  const [filteredRestaurant, setFilteredRestaurant] = useState();
+  const [searchText, setSearchText] = useState("");
   const onlineStatus = useOnlineStatus();
   const CardWithOffer = withOfferLabel(Card);
   const restaurantData = useRestaurantList(); // custom hook for list of restauranrt
   const restaurantList =
     restaurantData[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
-  console.log(restaurantList);
-  // console.log(filteredRestaurant);
 
-  // useEffect(() => {
-  //   fetchData();
-  // }, []);
-
-  // const fetchData = async () => {
-  //   const response = await fetch(RES_LIST_API);
-  //   const json = await response.json();
-  //   // console.log(json);
-  //   setListOfRes(
-  //     json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
-  //   );
-  //   setFilteredRestaurant(
-  //     json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
-  //   );
-  // };
+  useEffect(() => {
+    setFilteredRestaurant(restaurantList);
+  }, [restaurantList]);
 
   if (onlineStatus === false) {
     return (
@@ -50,49 +36,7 @@ const Body = () => {
     <Shimmer />
   ) : (
     <div className="flex-col mx-24">
-      <div className="flex items-center justify-between p-10">
-        <div className="flex w-[100%] bg-gray-100 mx-40 rounded-full hover:shadow-xl hover:-translate-y-1 transition">
-          <input
-            className="w-[100%] px-6 py-4 bg-transparent border-none outline-none"
-            type="text"
-            data-testid="searchInput"
-            placeholder="Search Restauraunts"
-            value={searchText}
-            onChange={(e) => {
-              setSerachText(e.target.value);
-            }}
-          />
-          <button
-            className="w-14 "
-            type="search"
-            aria-label="search"
-            onClick={() => {
-              const filteredList = restaurantList?.filter((res) =>
-                res?.info?.name
-                  ?.toLowerCase()
-                  ?.includes(searchText?.toLowerCase())
-              );
-              setFilteredRestaurant(filteredList);
-            }}
-          >
-            <img className="w-10" alt="search-icon" src={search} />
-          </button>
-        </div>
-        <div>
-          <button
-            className="px-8 py-2 rounded-full bg-gray-100 hover:bg-gray-900 hover:text-white hover:shadow-2xl hover:-translate-y-1 transition"
-            onClick={() => {
-              const newResList = restaurantList?.filter(
-                (res) => res?.info?.avgRating > 4
-              );
-              setFilteredRestaurant(newResList);
-            }}
-          >
-            Filter
-          </button>
-        </div>
-      </div>
-      <div>
+      <div className="pt-10">
         <h2 className="text-2xl font-semibold ml-14 pb-4">
           Best Offers for you
         </h2>
@@ -115,11 +59,59 @@ const Body = () => {
         />
       </div>
       <div className=" mx-auto">
-        <h2 className="text-2xl font-semibold ml-14 pb-4">
-          Restauraunts in Your Area
-        </h2>
+        <div className="flex items-center">
+          <div className="text-2xl font-semibold ml-14 pb-4">
+            <h2>Restauraunts in Your Area</h2>
+          </div>
+
+          <div className="flex items-center justify-between p-5">
+            <div className="flex justify-between w-[100%] bg-gray-100 mx-40 rounded-full hover:shadow-xl hover:-translate-y-1 transition">
+              <input
+                className="w-full px-6 py-2 bg-transparent border-none outline-none"
+                type="text"
+                data-testid="searchInput"
+                placeholder="Search Restauraunts"
+                value={searchText}
+                onChange={(e) => {
+                  setSearchText(e.target.value);
+                }}
+              />
+              <button
+                className="w-10"
+                type="search"
+                aria-label="search"
+                onClick={() => {
+                  const filteredList = restaurantList?.filter((res) =>
+                    res?.info?.name
+                      ?.toLowerCase()
+                      ?.includes(searchText?.toLowerCase())
+                  );
+                  console.log(filteredList);
+                  setFilteredRestaurant(filteredList);
+                }}
+              >
+                <img className="w-8" alt="search-icon" src={search} />
+              </button>
+            </div>
+            <div>
+              <button
+                className="px-8 py-2 rounded-full bg-gray-100 hover:bg-gray-900 hover:text-white hover:shadow-2xl hover:-translate-y-1 transition"
+                onClick={() => {
+                  const newResList = filteredRestaurant?.filter(
+                    (res) => res?.info?.avgRating > 4
+                  );
+                  console.log(newResList);
+                  setFilteredRestaurant(newResList);
+                }}
+              >
+                Filter
+              </button>
+            </div>
+          </div>
+        </div>
+
         <div className="flex flex-wrap flex-row justify-between px-4 ">
-          {restaurantList?.map((restaurant) => (
+          {filteredRestaurant?.map((restaurant) => (
             <Link
               key={restaurant?.info?.id}
               to={"/restaurant/" + restaurant?.info?.id}
@@ -156,3 +148,15 @@ const Body = () => {
 };
 
 export default Body;
+
+// const fetchData = async () => {
+//   const response = await fetch(RES_LIST_API);
+//   const json = await response.json();
+//   // console.log(json);
+//   setListOfRes(
+//     json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+//   );
+//   setFilteredRestaurant(
+//     json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+//   );
+// };
