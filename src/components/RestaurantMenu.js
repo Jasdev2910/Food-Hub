@@ -3,6 +3,8 @@ import useRestauranrMenu from "../utils/useRestaurantMenu";
 import Accordian from "./Accordian";
 import React, { useState } from "react";
 import StarsIcon from "@mui/icons-material/Stars";
+import ShimmerMenu from "./ShimmerMenu";
+import { useEffect } from "react";
 
 const RestaurantMenu = () => {
   const { resId } = useParams();
@@ -10,6 +12,9 @@ const RestaurantMenu = () => {
   const [showIndex, setShowIndex] = useState(false);
 
   // console.log(resInfo);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const categories =
     resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards?.filter(
@@ -18,7 +23,9 @@ const RestaurantMenu = () => {
         "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
     );
 
-  return (
+  return resInfo === null ? (
+    <ShimmerMenu />
+  ) : (
     <div className="max-w-3xl mx-auto mt-5">
       <div className="flex-col">
         <div className="flex-col">
