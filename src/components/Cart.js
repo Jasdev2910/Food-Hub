@@ -6,7 +6,7 @@ import Food from "../assets/food.png";
 import { Link } from "react-router-dom";
 
 const Cart = () => {
-  const cartItems = useSelector((store) => store?.cart?.items);
+  const cartItems = useSelector((store) => store?.cart);
 
   const dispatch = useDispatch(appStore);
 
@@ -33,7 +33,7 @@ const Cart = () => {
         <div className="my-3 max-w-3xl h-[0.5px] bg-slate-400 "></div>
 
         <div className="flex-col items-center justify-center mx-5 overflow-y-auto h-96 no-scrollbar">
-          {cartItems.length === 0 && (
+          {cartItems?.items?.length === 0 && (
             <div className="">
               <h1 className=" mt-8 text-center font-bold text-3xl text-gray-400">
                 Cart is Empty!
@@ -52,13 +52,27 @@ const Cart = () => {
               </div>
             </div>
           )}
-          {cartItems?.map((item) => (
+          {cartItems?.items?.map((item) => (
             <MenuItem menuItem={item} />
           ))}
         </div>
       </div>
-      <div className="flex-col w-6/12 m-6 p-4 bg-slate-200 rounded-xl">
+      <div className="flex-col  w-6/12 m-6 p-4 bg-slate-200 rounded-xl">
         <h1 className="text-center text-2xl font-bold">SubTotal</h1>
+        <div className="p-4  flex bg-slate-300 flex-col items-center justify-center rounded-xl">
+          <div className="py-10">
+            <h3>
+              Total Quantity = <span>{cartItems.totalQuantity}</span>
+            </h3>
+
+            <h3>
+              Total Price = <span>₹{cartItems.totalPrice}</span>
+            </h3>
+          </div>
+          <div className=" m-auto w-2/3 px-4 py-2 rounded-xl text-center font-semibold text-sm bg-gray-400  hover:bg-gray-900 hover:text-white hover:shadow-2xl hover:-translate-y-1 transition">
+            <button>Proceed to Pay</button>
+          </div>
+        </div>
       </div>
     </div>
   );
