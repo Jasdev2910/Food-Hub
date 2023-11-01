@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import MenuItem from "./MenuItem";
 import appStore from "../utils/appStore";
-import { clearCart, removeItem } from "../utils/cartSlice";
+import { clearCart, getCartTotal, removeItem } from "../utils/cartSlice";
 import Food from "../assets/food.png";
 import { Link } from "react-router-dom";
 
@@ -9,6 +9,8 @@ const Cart = () => {
   const cartItems = useSelector((store) => store?.cart?.items);
 
   const dispatch = useDispatch(appStore);
+
+  dispatch(getCartTotal());
 
   const handleClear = () => {
     dispatch(clearCart());
