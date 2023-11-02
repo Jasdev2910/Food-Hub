@@ -4,6 +4,7 @@ import appStore from "../utils/appStore";
 import { clearCart, getCartTotal, removeItem } from "../utils/cartSlice";
 import Food from "../assets/food.png";
 import { Link } from "react-router-dom";
+import CartItems from "./CartItems";
 
 const Cart = () => {
   const cartItems = useSelector((store) => store?.cart);
@@ -23,6 +24,7 @@ const Cart = () => {
       <div className="flex-col w-6/12 m-6 p-4 bg-slate-200 rounded-xl">
         <div className="flex items-center justify-between   px-8">
           <h1 className="text-center text-2xl font-bold">Cart</h1>
+          <h1 className="font-semibold">{cartItems?.resName}</h1>
           <button
             onClick={handleClear}
             className="px-4 py-1 rounded-xl font-semibold text-sm bg-gray-400 hover:bg-gray-900 hover:text-white hover:shadow-2xl hover:-translate-y-1 transition"
@@ -53,16 +55,20 @@ const Cart = () => {
             </div>
           )}
           {cartItems?.items?.map((item) => (
-            <MenuItem menuItem={item} />
+            // <MenuItem menuItem={item} />
+            <CartItems menuItem={item} />
           ))}
         </div>
       </div>
       <div className="flex-col  w-6/12 m-6 p-4 bg-slate-200 rounded-xl">
         <h1 className="text-center text-2xl font-bold">SubTotal</h1>
-        <div className="p-4  flex bg-slate-300 flex-col items-center justify-center rounded-xl">
-          <div className="py-10">
+        <div className="my-3 max-w-3xl h-[0.5px] bg-slate-400 "></div>
+
+        <div className="p-4 w-1/2 mx-auto mt-24  flex bg-slate-300 flex-col items-center justify-center rounded-xl">
+          <div className="py-10 text-xl font-semibold">
             <h3>
-              Total Quantity = <span>{cartItems.totalQuantity}</span>
+              Total Quantity ={" "}
+              <span className="">{cartItems.totalQuantity}</span>
             </h3>
 
             <h3>

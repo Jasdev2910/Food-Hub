@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { act } from "react-dom/test-utils";
 
 const cartSlice = createSlice({
   name: "cart",
@@ -6,6 +7,8 @@ const cartSlice = createSlice({
     items: [],
     totalQuantity: 0,
     totalPrice: 0,
+    resName: null,
+    resLocation: null,
   },
   reducers: {
     addItem: (state, action) => {
@@ -43,10 +46,16 @@ const cartSlice = createSlice({
     clearCart: (state) => {
       state.items.length = 0;
     },
+    addRestaurant: (state, action) => {
+      const { resName, location } = action.payload;
+      // if(resName === action.payload)
+      state.resName = resName;
+      state.resLocation = location;
+    },
   },
 });
 
-export const { addItem, removeItem, clearCart, getCartTotal } =
+export const { addItem, removeItem, clearCart, getCartTotal, addRestaurant } =
   cartSlice.actions;
 
 export default cartSlice.reducer;

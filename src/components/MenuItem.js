@@ -1,12 +1,13 @@
 import { useDispatch } from "react-redux";
 import { MENU_ITEM_IMG } from "../utils/constants";
-import { addItem } from "../utils/cartSlice";
+import { addItem, addRestaurant } from "../utils/cartSlice";
 
 const MenuItem = ({ menuItem }) => {
   const dispatch = useDispatch();
-
+  console.log(resName);
   const handleAddItem = (menuItem) => {
     dispatch(addItem(menuItem));
+    dispatch(addRestaurant(resName));
   };
 
   // console.log(menuItem);

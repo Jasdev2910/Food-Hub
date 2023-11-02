@@ -11,7 +11,7 @@ const RestaurantMenu = () => {
   const resInfo = useRestauranrMenu(resId); //custom Hook
   const [showIndex, setShowIndex] = useState(false);
 
-  // console.log(resInfo);
+  console.log(resInfo);
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);

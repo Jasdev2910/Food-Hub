@@ -9,6 +9,7 @@ const Accordian = ({ data, showMenuItem, showIndex, setShowIndex }) => {
   // console.log(props?.menu?.card?.card?.itemCards?.card?.info?.id);
   // console.log(showMenuItem);
   // console.log(showIndex);
+
   return (
     <div className="flex-col">
       <div

@@ -9,6 +9,8 @@ import useRestaurantList from "../utils/useRestaurantList";
 import Carousel from "./Carousel";
 import { CAROUSEL_IMG } from "../utils/constants";
 import { WIDGET_CAROUSEL } from "../utils/constants";
+import { useDispatch } from "react-redux";
+import { addRestaurant } from "../utils/cartSlice";
 
 const Body = () => {
   // const [listOfRes, setListOfRes] = useState([]);
@@ -20,9 +22,17 @@ const Body = () => {
   const restaurantList =
     restaurantData[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
 
+  const dispatch = useDispatch();
+
   useEffect(() => {
     setFilteredRestaurant(restaurantList);
   }, [restaurantList]);
+
+  const handleClick = (restaurant) => {
+    const resName = restaurant.info.name;
+    const location = restaurant.info.areaName;
+    dispatch(addRestaurant({ resName: resName, location: location }));
+  };
 
   if (onlineStatus === false) {
     return (
@@ -114,6 +124,7 @@ const Body = () => {
           {filteredRestaurant?.map((restaurant) => (
             <Link
               key={restaurant?.info?.id}
+              onClick={() => handleClick(restaurant)}
               to={"/restaurant/" + restaurant?.info?.id}
             >
               {restaurant?.info?.aggregatedDiscountInfoV3 === undefined ? (

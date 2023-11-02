@@ -8,6 +8,8 @@ import { IconButton } from "@mui/material";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import Badge from "@mui/material/Badge";
 import { styled } from "@mui/material/styles";
+import LocalOfferOutlinedIcon from "@mui/icons-material/LocalOfferOutlined";
+import HelpOutlineOutlinedIcon from "@mui/icons-material/HelpOutlineOutlined";
 
 const Header = () => {
   const [btnName, setBtnName] = useState("Login");
@@ -28,15 +30,18 @@ const Header = () => {
   return (
     <nav className="flex justify-between items-center bg-slate-900">
       <div className="flex items-center text-2xl font-semibold">
-        <Link to="/">
-          <img className="w-20 mr-3" src={Logo} alt="logo"></img>
+        <Link className="w-20" to="/">
+          <img className=" mr-3" src={Logo} alt="logo"></img>
         </Link>
         <h1 className="text-white">Food Hub</h1>
       </div>
       <div className="flex mx-6 text-white text-lg">
         <ul className="flex p-6">
-          <li className="px-6 m-2 cursor-pointer">
-            <Link to="/offers">Offers</Link>
+          <li className="px-6 m-2  cursor-pointer">
+            <Link className="ml-1 flex items-center" to="/offers">
+              <LocalOfferOutlinedIcon />
+              Offers
+            </Link>
           </li>
           <button
             className="px-6 m-2 cursor-pointer"
@@ -46,8 +51,11 @@ const Header = () => {
           >
             {btnName}
           </button>
-          <li className="px-6 m-2 cursor-pointer">
-            <Link to="/help">Help</Link>
+          <li className="px-6 m-2  cursor-pointer">
+            <Link className="flex items-center" to="/help">
+              <HelpOutlineOutlinedIcon />
+              Help
+            </Link>
           </li>
           <li className="px-6 m-2 cursor-pointer">
             <Link to="/groceries">Groceries</Link>
