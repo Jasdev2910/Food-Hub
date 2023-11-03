@@ -1,13 +1,19 @@
 import { useDispatch } from "react-redux";
 import { MENU_ITEM_IMG } from "../utils/constants";
 import { addItem, addRestaurant } from "../utils/cartSlice";
+import useRestauranrMenu from "../utils/useRestaurantMenu";
+import { useParams } from "react-router-dom";
 
-const MenuItem = ({ menuItem }) => {
-  const dispatch = useDispatch();
-  console.log(resName);
+const MenuItem = ({ menuItem, handleClick }) => {
+  // const dispatch = useDispatch();
+  // const { resId } = useParams();
+  // const resInfo = useRestauranrMenu(resId);
+  // console.log(resInfo);
+  // const resName = resInfo?.
+
+  console.log(menuItem);
   const handleAddItem = (menuItem) => {
-    dispatch(addItem(menuItem));
-    dispatch(addRestaurant(resName));
+    handleClick(menuItem);
   };
 
   // console.log(menuItem);

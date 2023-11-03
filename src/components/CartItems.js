@@ -1,9 +1,15 @@
 import React from "react";
 import { MENU_ITEM_IMG } from "../utils/constants";
 import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { removeItem } from "../utils/cartSlice";
 
 const CartItems = ({ menuItem }) => {
   const cart = useSelector((store) => store.cart);
+  const dispatch = useDispatch();
+  const deleteItem = () => {
+    dispatch(removeItem(menuItem.card?.info.id));
+  };
 
   return (
     <div className="flex p-4 w-full">
@@ -32,7 +38,10 @@ const CartItems = ({ menuItem }) => {
             </button>
           </div>
           <div>
-            <button className="px-4 py-1 rounded-xl font-semibold text-sm bg-white hover:bg-gray-900 hover:text-white hover:shadow-2xl hover:-translate-y-1 transition">
+            <button
+              onClick={deleteItem}
+              className="px-4 py-1 rounded-xl font-semibold text-sm bg-white hover:bg-gray-900 hover:text-white hover:shadow-2xl hover:-translate-y-1 transition"
+            >
               delete
             </button>
           </div>

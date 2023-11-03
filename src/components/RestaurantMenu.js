@@ -5,11 +5,16 @@ import React, { useState } from "react";
 import StarsIcon from "@mui/icons-material/Stars";
 import ShimmerMenu from "./ShimmerMenu";
 import { useEffect } from "react";
+import { addItem, addRestaurant } from "../utils/cartSlice";
+import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 
 const RestaurantMenu = () => {
   const { resId } = useParams();
   const resInfo = useRestauranrMenu(resId); //custom Hook
   const [showIndex, setShowIndex] = useState(false);
+  const dispatch = useDispatch();
+  const cartResName = useSelector((store) => store.cart.resName);
 
   console.log(resInfo);
   useEffect(() => {
@@ -22,6 +27,18 @@ const RestaurantMenu = () => {
         c?.card?.card?.["@type"] ===
         "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
     );
+
+  const location = resInfo?.cards[0]?.card?.card?.info?.areaName;
+  const handleClick = (menuItem) => {
+    const resName = resInfo?.cards[0]?.card?.card?.info?.name;
+    if (cartResName === null || resName === cartResName) {
+      dispatch(addRestaurant({ resName: resName, location: location }));
+      dispatch(addItem(menuItem));
+    } else {
+      alert("Order Pending from another Restaurant");
+    }
+    console.log(menuItem);
+  };
 
   return resInfo === null ? (
     <ShimmerMenu />
@@ -60,6 +77,7 @@ const RestaurantMenu = () => {
         <div className="flex-col">
           {categories?.map((category, index) => (
             <Accordian
+              handleClick={handleClick}
               key={category?.card?.card?.title}
               data={category?.card?.card}
               showMenuItem={index === showIndex ? true : false}

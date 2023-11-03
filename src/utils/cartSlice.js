@@ -12,11 +12,11 @@ const cartSlice = createSlice({
   },
   reducers: {
     addItem: (state, action) => {
-      let find = state.items.findIndex(
-        (item) => item.card.info.id === action.payload.card.info.id
+      let find = state?.items?.findIndex(
+        (item) => item.card?.info?.id === action.payload.card?.info?.id
       );
 
-      if (find >= 0) {
+      if (find > 0) {
         state.items[find].card.info.inStock += 1;
       } else {
         state.items.push(action.payload);
@@ -25,7 +25,8 @@ const cartSlice = createSlice({
     getCartTotal: (state) => {
       let { totalQuantity, totalPrice } = state.items.reduce(
         (cartTotal, cartItem) => {
-          const { price, inStock } = cartItem.card.info;
+          const price = cartItem.card?.info.price;
+          const inStock = cartItem.card?.info.inStock;
           console.log(price, inStock);
           const itemTotal = (price / 100) * inStock;
           cartTotal.totalPrice += itemTotal;
@@ -40,15 +41,21 @@ const cartSlice = createSlice({
       state.totalPrice = parseInt(totalPrice.toFixed(2));
       state.totalQuantity = totalQuantity;
     },
-    removeItem: (state) => {
-      state.items.pop();
+    removeItem: (state, action) => {
+      state.items = state.items.filter(
+        (item) => item.card?.info.id !== action.payload
+      );
+      if (state.items.length === 1) {
+        state.resName === null;
+      }
     },
     clearCart: (state) => {
       state.items.length = 0;
+      state.resName = null;
     },
     addRestaurant: (state, action) => {
       const { resName, location } = action.payload;
-      // if(resName === action.payload)
+
       state.resName = resName;
       state.resLocation = location;
     },

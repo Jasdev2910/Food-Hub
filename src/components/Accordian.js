@@ -3,7 +3,13 @@ import MenuItem from "./MenuItem";
 import UpArrow from "../assets/up-arrow.png";
 import DownArrow from "../assets/down-arrow.png";
 
-const Accordian = ({ data, showMenuItem, showIndex, setShowIndex }) => {
+const Accordian = ({
+  data,
+  showMenuItem,
+  showIndex,
+  setShowIndex,
+  handleClick,
+}) => {
   // const [isActive, setISActive] = useState(false);
   // console.log(props?.menu?.card?.card?.itemCards);
   // console.log(props?.menu?.card?.card?.itemCards?.card?.info?.id);
@@ -33,7 +39,11 @@ const Accordian = ({ data, showMenuItem, showIndex, setShowIndex }) => {
       {showMenuItem && (
         <div className="p-5 max-w-3xl bg-slate-50 rounded-b-xl">
           {data?.itemCards?.map((item, index) => (
-            <MenuItem key={data?.itemCards?.card?.info?.id} menuItem={item} />
+            <MenuItem
+              key={data?.itemCards?.card?.info?.id}
+              handleClick={handleClick}
+              menuItem={item}
+            />
           ))}
         </div>
       )}

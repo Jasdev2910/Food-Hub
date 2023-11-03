@@ -28,11 +28,11 @@ const Body = () => {
     setFilteredRestaurant(restaurantList);
   }, [restaurantList]);
 
-  const handleClick = (restaurant) => {
-    const resName = restaurant.info.name;
-    const location = restaurant.info.areaName;
-    dispatch(addRestaurant({ resName: resName, location: location }));
-  };
+  // const handleClick = (restaurant) => {
+  //   const resName = restaurant.info.name;
+  //   const location = restaurant.info.areaName;
+  //   dispatch(addRestaurant({ resName: resName, location: location }));
+  // };
 
   if (onlineStatus === false) {
     return (
@@ -124,7 +124,7 @@ const Body = () => {
           {filteredRestaurant?.map((restaurant) => (
             <Link
               key={restaurant?.info?.id}
-              onClick={() => handleClick(restaurant)}
+              // onClick={() => handleClick(restaurant)}
               to={"/restaurant/" + restaurant?.info?.id}
             >
               {restaurant?.info?.aggregatedDiscountInfoV3 === undefined ? (

@@ -8,6 +8,7 @@ import CartItems from "./CartItems";
 
 const Cart = () => {
   const cartItems = useSelector((store) => store?.cart);
+  const resName = cartItems?.resName;
 
   const dispatch = useDispatch(appStore);
 
@@ -24,7 +25,9 @@ const Cart = () => {
       <div className="flex-col w-6/12 m-6 p-4 bg-slate-200 rounded-xl">
         <div className="flex items-center justify-between   px-8">
           <h1 className="text-center text-2xl font-bold">Cart</h1>
-          <h1 className="font-semibold">{cartItems?.resName}</h1>
+          <h1 className="font-semibold">
+            {cartItems.items.length > 0 ? resName : null}
+          </h1>
           <button
             onClick={handleClear}
             className="px-4 py-1 rounded-xl font-semibold text-sm bg-gray-400 hover:bg-gray-900 hover:text-white hover:shadow-2xl hover:-translate-y-1 transition"
