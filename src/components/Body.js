@@ -47,7 +47,7 @@ const Body = () => {
   ) : (
     <div className="flex-col mx-24">
       <div className="pt-10">
-        <h2 className="text-2xl font-semibold ml-14 pb-4">
+        <h2 className="text-2xl font-semibold ml-10 pb-4">
           Best Offers for you
         </h2>
         <Carousel
@@ -58,7 +58,7 @@ const Body = () => {
         />
       </div>
       <div>
-        <div className="text-2xl font-semibold ml-14 pb-4">
+        <div className="text-2xl font-semibold ml-10 pb-4">
           <h2>{restaurantData[1]?.card?.card?.header?.title}</h2>
         </div>
         <Carousel
@@ -70,7 +70,7 @@ const Body = () => {
       </div>
       <div className=" mx-auto">
         <div className="flex items-center">
-          <div className="text-2xl font-semibold ml-14 pb-4">
+          <div className="text-2xl font-semibold ml-10 pb-4">
             <h2>Restauraunts in Your Area</h2>
           </div>
 
