@@ -13,8 +13,8 @@ const Accordian = ({
   // const [isActive, setISActive] = useState(false);
   // console.log(props?.menu?.card?.card?.itemCards);
   // console.log(props?.menu?.card?.card?.itemCards?.card?.info?.id);
-  // console.log(showMenuItem);
-  // console.log(showIndex);
+  console.log(showMenuItem);
+  console.log(showIndex);
 
   return (
     <div className="flex-col">

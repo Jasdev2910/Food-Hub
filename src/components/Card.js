@@ -40,7 +40,7 @@ export const withOfferLabel = (Card) => {
     return (
       <div>
         <div className="relative text-center">
-          <h1 className="w-44 absolute font-extrabold text-white top-[142px] left-[45px] z-10 drop-shadow-2xl">
+          <h1 className="w-44 absolute font-extrabold text-white top-[142px] left-[42px] z-10 drop-shadow-2xl">
             {props?.labelHeader + props?.labelSubHeader}
           </h1>
         </div>

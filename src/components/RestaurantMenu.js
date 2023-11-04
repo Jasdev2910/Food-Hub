@@ -8,6 +8,7 @@ import { useEffect } from "react";
 import { addItem, addRestaurant } from "../utils/cartSlice";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
+import AccessTimeIcon from "@mui/icons-material/AccessTime";
 
 const RestaurantMenu = () => {
   const { resId } = useParams();
@@ -27,6 +28,8 @@ const RestaurantMenu = () => {
         c?.card?.card?.["@type"] ===
         "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
     );
+
+  console.log(resInfo);
 
   const location = resInfo?.cards[0]?.card?.card?.info?.areaName;
   const handleClick = (menuItem) => {
@@ -57,6 +60,9 @@ const RestaurantMenu = () => {
               <p className="font-light py-1">
                 {resInfo?.cards[0]?.card?.card?.info?.areaName}
               </p>
+              <p className="font-light py-1">
+                {resInfo?.cards[0]?.card?.card?.info?.feeDetails?.message}
+              </p>
             </div>
             <div className="w-10 text-center text-lg">
               <h3>
@@ -66,9 +72,10 @@ const RestaurantMenu = () => {
             </div>
           </div>
           <div className="max-w-3xl h-[0.5px] bg-slate-300 "></div>
-          <div className="flex justify-between p-3">
+          <div className="flex text-lg font-bold p-3">
             <h3>{resInfo?.cards[0]?.card?.card?.info?.costForTwoMessage}</h3>
-            <h3>
+            <h3 className="ml-7 flex items-center">
+              <AccessTimeIcon />
               {resInfo?.cards[0]?.card?.card?.info?.sla?.deliveryTime} Minutes
             </h3>
           </div>

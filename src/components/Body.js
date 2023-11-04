@@ -75,7 +75,7 @@ const Body = () => {
           </div>
 
           <div className="flex items-center justify-between p-5">
-            <div className="flex justify-between w-[100%] bg-gray-100 mx-40 rounded-full hover:shadow-xl hover:-translate-y-1 transition">
+            <div className=" flex justify-between w-[100%] bg-gray-100 mx-40 rounded-full hover:shadow-xl hover:-translate-y-1 transition">
               <input
                 className="w-full px-6 py-2 bg-transparent border-none outline-none"
                 type="text"
@@ -87,7 +87,7 @@ const Body = () => {
                 }}
               />
               <button
-                className="w-10"
+                className="w-7 mr-2 "
                 type="search"
                 aria-label="search"
                 onClick={() => {

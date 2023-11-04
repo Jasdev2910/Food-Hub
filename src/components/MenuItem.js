@@ -9,7 +9,6 @@ const MenuItem = ({ menuItem, handleClick }) => {
   // const { resId } = useParams();
   // const resInfo = useRestauranrMenu(resId);
   // console.log(resInfo);
-  // const resName = resInfo?.
 
   console.log(menuItem);
   const handleAddItem = (menuItem) => {
@@ -25,7 +24,9 @@ const MenuItem = ({ menuItem, handleClick }) => {
             {menuItem?.card?.info?.name}
           </h3>
           <p className="text-base font-light">
-            {"₹" + menuItem?.card?.info?.price / 100}
+            {"₹" +
+              (menuItem?.card?.info?.price / 100 ||
+                menuItem?.card?.info?.defaultPrice / 100)}
           </p>
           <p className="py-2 font-extralight text-sm text-gray-500 ">
             {menuItem?.card?.info?.description}

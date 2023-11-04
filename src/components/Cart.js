@@ -25,9 +25,7 @@ const Cart = () => {
       <div className="flex-col w-6/12 m-6 p-4 bg-slate-200 rounded-xl">
         <div className="flex items-center justify-between   px-8">
           <h1 className="text-center text-2xl font-bold">Cart</h1>
-          <h1 className="font-semibold">
-            {cartItems.items.length > 0 ? resName : null}
-          </h1>
+          <h1 className="font-semibold">{resName}</h1>
           <button
             onClick={handleClear}
             className="px-4 py-1 rounded-xl font-semibold text-sm bg-gray-400 hover:bg-gray-900 hover:text-white hover:shadow-2xl hover:-translate-y-1 transition"
@@ -68,15 +66,15 @@ const Cart = () => {
         <div className="my-3 max-w-3xl h-[0.5px] bg-slate-400 "></div>
 
         <div className="p-4 w-1/2 mx-auto mt-24  flex bg-slate-300 flex-col items-center justify-center rounded-xl">
-          <div className="py-10 text-xl font-semibold">
-            <h3>
-              Total Quantity ={" "}
-              <span className="">{cartItems.totalQuantity}</span>
-            </h3>
-
-            <h3>
-              Total Price = <span>₹{cartItems.totalPrice}</span>
-            </h3>
+          <div className="py-8 px-4 w-full text-xl font-semibold">
+            <div className="flex items-center justify-between">
+              <h3>Total Quantity </h3>
+              <span className="text-base">{cartItems.totalQuantity}</span>
+            </div>
+            <div className="flex items-center justify-between">
+              <h3>Total Price </h3>
+              <span className="text-base">₹{cartItems.totalPrice}</span>
+            </div>
           </div>
           <div className=" m-auto w-2/3 px-4 py-2 rounded-xl text-center font-semibold text-sm bg-gray-400  hover:bg-gray-900 hover:text-white hover:shadow-2xl hover:-translate-y-1 transition">
             <button>Proceed to Pay</button>
