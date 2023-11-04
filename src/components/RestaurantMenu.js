@@ -9,6 +9,8 @@ import { addItem, addRestaurant } from "../utils/cartSlice";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const RestaurantMenu = () => {
   const { resId } = useParams();
@@ -16,6 +18,8 @@ const RestaurantMenu = () => {
   const [showIndex, setShowIndex] = useState(false);
   const dispatch = useDispatch();
   const cartResName = useSelector((store) => store.cart.resName);
+  const notify = () => toast("Order Pending from another Restaurant");
+  const notifySuccess = () => toast("Added to Cart");
 
   console.log(resInfo);
   useEffect(() => {
@@ -37,8 +41,9 @@ const RestaurantMenu = () => {
     if (cartResName === null || resName === cartResName) {
       dispatch(addRestaurant({ resName: resName, location: location }));
       dispatch(addItem(menuItem));
+      notifySuccess();
     } else {
-      alert("Order Pending from another Restaurant");
+      notify();
     }
     console.log(menuItem);
   };
@@ -94,6 +99,18 @@ const RestaurantMenu = () => {
           ))}
         </div>
       </div>
+      <ToastContainer
+        position="bottom-right"
+        autoClose={1000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
     </div>
   );
 };

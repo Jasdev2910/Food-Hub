@@ -1,15 +1,6 @@
-import { useDispatch } from "react-redux";
 import { MENU_ITEM_IMG } from "../utils/constants";
-import { addItem, addRestaurant } from "../utils/cartSlice";
-import useRestauranrMenu from "../utils/useRestaurantMenu";
-import { useParams } from "react-router-dom";
 
 const MenuItem = ({ menuItem, handleClick }) => {
-  // const dispatch = useDispatch();
-  // const { resId } = useParams();
-  // const resInfo = useRestauranrMenu(resId);
-  // console.log(resInfo);
-
   console.log(menuItem);
   const handleAddItem = (menuItem) => {
     handleClick(menuItem);
@@ -46,6 +37,22 @@ const MenuItem = ({ menuItem, handleClick }) => {
           >
             Add+
           </button>
+          {/* {cart.items.some(
+            (item) => item.card?.info?.id === menuItem?.card?.info?.id
+          ) && (
+            <ToastContainer
+              position="bottom-right"
+              autoClose={1000}
+              hideProgressBar={false}
+              newestOnTop={false}
+              closeOnClick
+              rtl={false}
+              pauseOnFocusLoss
+              draggable
+              pauseOnHover
+              theme="light"
+            />
+          )} */}
         </div>
       </div>
       <div className="my-3 max-w-3xl h-[0.5px] bg-slate-300 "></div>
