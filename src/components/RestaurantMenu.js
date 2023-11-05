@@ -33,6 +33,14 @@ const RestaurantMenu = () => {
         "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
     );
 
+  const toggleAccordion = (index) => {
+    if (showIndex === index) {
+      setShowIndex(null); // Close the accordion if it's already open
+    } else {
+      setShowIndex(index); // Open the accordion
+    }
+  };
+
   console.log(resInfo);
 
   const location = resInfo?.cards[0]?.card?.card?.info?.areaName;
@@ -94,7 +102,8 @@ const RestaurantMenu = () => {
               data={category?.card?.card}
               showMenuItem={index === showIndex ? true : false}
               showIndex={showIndex}
-              setShowIndex={() => setShowIndex(index)}
+              // setShowIndex={() => setShowIndex(index)}
+              toggleAccordion={() => toggleAccordion(index)}
             />
           ))}
         </div>

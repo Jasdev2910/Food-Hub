@@ -9,6 +9,7 @@ const Accordian = ({
   showIndex,
   setShowIndex,
   handleClick,
+  toggleAccordion,
 }) => {
   // const [isActive, setISActive] = useState(false);
   // console.log(props?.menu?.card?.card?.itemCards);
@@ -20,7 +21,7 @@ const Accordian = ({
     <div className="flex-col">
       <div
         className="max-w-3xl hover:bg-slate-5 0 hover:-translate-y-1 transition p-6  flex justify-between cursor-pointer shadow-lg"
-        onClick={() => setShowIndex()}
+        onClick={toggleAccordion}
       >
         <div className="font-bold">
           {data?.title}
