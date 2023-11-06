@@ -1,6 +1,6 @@
-# Swiggy Live API Integration Project
+# Food Hub
 
-Welcome to the Swiggy Live API Integration Project! This project is a comprehensive exploration of React and its associated technologies, guided by the exceptional Akshay Saini. Throughout this course, we learned React fundamentals and developed a dynamic application that integrates with Swiggy's Live API.
+Welcome to Food Hub! This project is a comprehensive exploration of React and its associated technologies, guided by the exceptional Akshay Saini. Throughout this course, we learned React fundamentals and developed a dynamic application that integrates with Swiggy's Live API.
 
 ## Key Features
 
