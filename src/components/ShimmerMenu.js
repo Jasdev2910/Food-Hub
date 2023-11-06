@@ -3,7 +3,7 @@ import { ShimmerPostDetails } from "react-shimmer-effects";
 
 const ShimmerMenu = () => {
   return (
-    <div className="mx-28 my-16">
+    <div className="mx-28 pt-28 ">
       <ShimmerPostDetails card cta variant="SIMPLE" />
     </div>
   );

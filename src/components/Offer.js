@@ -18,7 +18,7 @@ const Offer = () => {
   return restaurantList?.length === undefined ? (
     <Shimmer />
   ) : (
-    <div className="flex-col mx-24 my-10">
+    <div className="flex-col mx-24 pt-28">
       <div className="text-2xl font-bold">
         <h1>Restaurant With Great Offer Near Me</h1>
       </div>

@@ -15,7 +15,7 @@ import "react-toastify/dist/ReactToastify.css";
 const RestaurantMenu = () => {
   const { resId } = useParams();
   const resInfo = useRestauranrMenu(resId); //custom Hook
-  const [showIndex, setShowIndex] = useState(false);
+  const [showIndex, setShowIndex] = useState(true);
   const dispatch = useDispatch();
   const cartResName = useSelector((store) => store.cart.resName);
   const notify = () => toast("Order Pending from another Restaurant");
@@ -59,7 +59,7 @@ const RestaurantMenu = () => {
   return resInfo === null ? (
     <ShimmerMenu />
   ) : (
-    <div className="max-w-3xl mx-auto mt-5">
+    <div className="max-w-3xl mx-auto pt-24">
       <div className="flex-col">
         <div className="flex-col">
           <div className="flex justify-between items-center">

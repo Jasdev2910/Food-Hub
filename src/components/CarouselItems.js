@@ -35,7 +35,7 @@ const Pizza = () => {
   return list?.length === 0 ? (
     <Shimmer />
   ) : (
-    <div className="px-20 py-5">
+    <div className="px-20 py-5 pt-24">
       <div className="m-10">
         <h1 className="text-4xl font-medium">{list[0]?.card?.card?.title}</h1>
         <h3 className="text-sm text-gray-500">

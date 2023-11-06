@@ -10,7 +10,7 @@ const Help = () => {
   }, []);
 
   return (
-    <div className="p-5 felx-col">
+    <div className="p-5 felx-col pt-24">
       <h1 className="px-5 pt-5 text-2xl font-Montserrat font-bold">
         Help & Support
       </h1>

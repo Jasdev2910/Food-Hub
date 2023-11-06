@@ -5,6 +5,7 @@ import { clearCart, getCartTotal, removeItem } from "../utils/cartSlice";
 import Food from "../assets/food.png";
 import { Link } from "react-router-dom";
 import CartItems from "./CartItems";
+import { useEffect } from "react";
 
 const Cart = () => {
   const cartItems = useSelector((store) => store?.cart);
@@ -14,6 +15,10 @@ const Cart = () => {
 
   dispatch(getCartTotal());
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const handleClear = () => {
     dispatch(clearCart());
   };
@@ -21,7 +26,7 @@ const Cart = () => {
   // console.log(cartItems);
 
   return (
-    <div className="flex px-9 py-6">
+    <div className="flex px-9 py-6 pt-24">
       <div className="flex-col w-6/12 m-6 p-4 bg-slate-200 rounded-xl">
         <div className="flex items-center justify-between   px-8">
           <h1 className="text-center text-2xl font-bold">Cart</h1>

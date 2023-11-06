@@ -30,7 +30,7 @@ const Header = () => {
   }));
 
   return (
-    <nav className="flex justify-between items-center bg-white text-black shadow-lg">
+    <nav className=" w-full flex justify-between items-center fixed z-40 bg-white text-black shadow-lg">
       <div className="flex items-center text-2xl font-semibold">
         <Link className="w-20" to="/">
           <img className="mr-3" src={Logo} alt="logo"></img>
@@ -40,7 +40,7 @@ const Header = () => {
         </h1>
       </div>
       <div className="flex mx-6 text-black text-lg ">
-        <ul className="flex p-6">
+        <ul className="flex p-4">
           <li className="px-6 m-2  cursor-pointer">
             <Link
               className="ml-1 flex items-center hover:text-orange-500"
@@ -79,14 +79,9 @@ const Header = () => {
           </li>
           <Link to="/cart">
             <div className="flex items-center">
-              {/* <img
-                className="w-8 m-2 cursor-pointer"
-                alt="cart-logo"
-                src={CartImg}
-              /> */}
-              <IconButton aria-label="cart">
+              <IconButton className=" hover:text-orange-500" aria-label="cart">
                 <StyledBadge
-                  className="text-green-400"
+                  className="text-green-400 hover:text-orange-500"
                   badgeContent={cartItems?.length}
                   color="primary"
                 >

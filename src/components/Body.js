@@ -3,14 +3,11 @@ import search from "../assets/search.png";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
-import { RES_LIST_API } from "../utils/constants";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import useRestaurantList from "../utils/useRestaurantList";
 import Carousel from "./Carousel";
 import { CAROUSEL_IMG } from "../utils/constants";
 import { WIDGET_CAROUSEL } from "../utils/constants";
-import { useDispatch } from "react-redux";
-import { addRestaurant } from "../utils/cartSlice";
 
 const Body = () => {
   // const [listOfRes, setListOfRes] = useState([]);
@@ -22,17 +19,11 @@ const Body = () => {
   const restaurantList =
     restaurantData[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
 
-  const dispatch = useDispatch();
-
+  console.log(restaurantList);
   useEffect(() => {
+    window.scrollTo(0, 0);
     setFilteredRestaurant(restaurantList);
   }, [restaurantList]);
-
-  // const handleClick = (restaurant) => {
-  //   const resName = restaurant.info.name;
-  //   const location = restaurant.info.areaName;
-  //   dispatch(addRestaurant({ resName: resName, location: location }));
-  // };
 
   if (onlineStatus === false) {
     return (
@@ -45,28 +36,30 @@ const Body = () => {
   return restaurantList?.length === undefined ? (
     <Shimmer />
   ) : (
-    <div className="flex-col mx-24">
+    <div className="flex-col mx-24 pt-24 ">
       <div className="pt-10">
         <h2 className="text-2xl font-semibold ml-10 pb-4">
           Best Offers for you
         </h2>
-        <Carousel
-          data={restaurantData[0]}
-          CAROUSEL_IMG={WIDGET_CAROUSEL}
-          minWidth="min-w-[350px]"
-          overflow="overflow-x-scroll"
-        />
+        <div>
+          <Carousel
+            data={restaurantData[0]}
+            CAROUSEL_IMG={WIDGET_CAROUSEL}
+            minWidth="min-w-[350px]"
+          />
+        </div>
       </div>
       <div>
         <div className="text-2xl font-semibold ml-10 pb-4">
           <h2>{restaurantData[1]?.card?.card?.header?.title}</h2>
         </div>
-        <Carousel
-          data={restaurantData[1]}
-          CAROUSEL_IMG={CAROUSEL_IMG}
-          minWidth={`min-w-[150px]`}
-          overflow="overflow-x-scroll"
-        />
+        <div>
+          <Carousel
+            data={restaurantData[1]}
+            CAROUSEL_IMG={CAROUSEL_IMG}
+            minWidth={`min-w-[150px]`}
+          />
+        </div>
       </div>
       <div className=" mx-auto">
         <div className="flex items-center">
@@ -120,7 +113,7 @@ const Body = () => {
           </div>
         </div>
 
-        <div className="flex flex-wrap flex-row justify-between px-4 ">
+        <div className="grid grid-cols-4 px-4 ">
           {filteredRestaurant?.map((restaurant) => (
             <Link
               key={restaurant?.info?.id}
