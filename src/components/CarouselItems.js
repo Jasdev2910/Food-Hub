@@ -42,7 +42,7 @@ const Pizza = () => {
           {list[0]?.card?.card?.description}
         </h3>
       </div>
-      <div className="flex flex-wrap flex-row justify-between px-4 ">
+      <div className="grid grid-cols-4 px-4 ">
         {list?.slice(3)?.map((restaurant) => (
           <Link
             key={restaurant?.card?.card?.info?.id}

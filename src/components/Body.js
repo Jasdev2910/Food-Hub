@@ -37,7 +37,7 @@ const Body = () => {
     <Shimmer />
   ) : (
     <div className="flex-col mx-24 pt-24 ">
-      <div className="pt-10">
+      <div className="pt-6">
         <h2 className="text-2xl font-semibold ml-10 pb-4">
           Best Offers for you
         </h2>
@@ -50,7 +50,7 @@ const Body = () => {
         </div>
       </div>
       <div>
-        <div className="text-2xl font-semibold ml-10 pb-4">
+        <div className="text-2xl font-semibold ml-10">
           <h2>{restaurantData[1]?.card?.card?.header?.title}</h2>
         </div>
         <div>
