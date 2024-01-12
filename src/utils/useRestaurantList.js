@@ -17,6 +17,7 @@ const useRestaurantList = () => {
       json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
     setFilteredRestaurant1(json?.data?.cards);
+    console.log(json);
   };
 
   return filteredRestaurant1;

@@ -8,6 +8,7 @@ import useRestaurantList from "../utils/useRestaurantList";
 import Carousel from "./Carousel";
 import { CAROUSEL_IMG } from "../utils/constants";
 import { WIDGET_CAROUSEL } from "../utils/constants";
+import CarouselItems from "./CarouselItems";
 
 const Body = () => {
   // const [listOfRes, setListOfRes] = useState([]);
@@ -17,9 +18,12 @@ const Body = () => {
   const CardWithOffer = withOfferLabel(Card);
   const restaurantData = useRestaurantList(); // custom hook for list of restauranrt
   const restaurantList =
-    restaurantData[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
+    restaurantData[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
 
-  console.log(restaurantList);
+  console.log(restaurantData);
+  console.log(restaurantData[0]);
+  console.log(restaurantData[1]);
+
   useEffect(() => {
     window.scrollTo(0, 0);
     setFilteredRestaurant(restaurantList);
@@ -45,7 +49,7 @@ const Body = () => {
           <Carousel
             data={restaurantData[0]}
             CAROUSEL_IMG={WIDGET_CAROUSEL}
-            minWidth="min-w-[350px]"
+            minWidth="min-w-[150px]"
           />
         </div>
       </div>
