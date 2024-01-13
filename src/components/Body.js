@@ -9,6 +9,7 @@ import Carousel from "./Carousel";
 import { CAROUSEL_IMG } from "../utils/constants";
 import { WIDGET_CAROUSEL } from "../utils/constants";
 import CarouselItems from "./CarouselItems";
+import CarouselRes from "./CarouselRes";
 
 const Body = () => {
   // const [listOfRes, setListOfRes] = useState([]);
@@ -19,10 +20,14 @@ const Body = () => {
   const restaurantData = useRestaurantList(); // custom hook for list of restauranrt
   const restaurantList =
     restaurantData[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
+  const restaurantList2 =
+    restaurantData[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
 
   console.log(restaurantData);
   console.log(restaurantData[0]);
-  console.log(restaurantData[1]);
+  console.log(
+    restaurantData[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+  );
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -42,27 +47,28 @@ const Body = () => {
   ) : (
     <div className="flex-col mx-24 pt-24 ">
       <div className="pt-6">
-        <h2 className="text-2xl font-semibold ml-10 pb-4">
-          Best Offers for you
-        </h2>
+        <div className="text-2xl font-semibold ml-10">
+          <h2>{restaurantData[0]?.card?.card?.header?.title}</h2>
+        </div>
         <div>
           <Carousel
             data={restaurantData[0]}
-            CAROUSEL_IMG={WIDGET_CAROUSEL}
-            minWidth="min-w-[150px]"
+            CAROUSEL_IMG={CAROUSEL_IMG}
+            minWidth={`min-w-[150px]`}
           />
         </div>
       </div>
       <div>
-        <div className="text-2xl font-semibold ml-10">
-          <h2>{restaurantData[1]?.card?.card?.header?.title}</h2>
-        </div>
+        <h2 className="text-2xl font-semibold ml-10 pb-4">
+          Best Offers for you
+        </h2>
         <div>
-          <Carousel
-            data={restaurantData[1]}
-            CAROUSEL_IMG={CAROUSEL_IMG}
-            minWidth={`min-w-[150px]`}
-          />
+          {/* <Carousel
+            data={restaurantData[0]}
+            CAROUSEL_IMG={WIDGET_CAROUSEL}
+            minWidth="min-w-[150px]"
+          /> */}
+          <CarouselRes filteredRestaurant={restaurantList2} />
         </div>
       </div>
       <div className=" mx-auto">
