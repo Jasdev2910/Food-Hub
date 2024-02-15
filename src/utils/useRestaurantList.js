@@ -10,14 +10,19 @@ const useRestaurantList = () => {
   }, []);
 
   const fetchData = async () => {
-    const response = await fetch(RES_LIST_API);
-    const json = await response.json();
-    // console.log(json);
-    setListOfRes1(
-      json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
-    );
-    setFilteredRestaurant1(json?.data?.cards);
-    console.log(json);
+    try {
+      const response = await fetch(RES_LIST_API);
+      const json = await response.json();
+      // console.log(json);
+      setListOfRes1(
+        json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
+          ?.restaurants
+      );
+      setFilteredRestaurant1(json?.data?.cards);
+      console.log(json);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return filteredRestaurant1;
