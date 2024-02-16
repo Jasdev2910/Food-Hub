@@ -11,9 +11,12 @@ const Cart = () => {
   const cartItems = useSelector((store) => store?.cart);
   const resName = cartItems?.resName;
 
+  console.log(cartItems);
   const dispatch = useDispatch(appStore);
 
-  dispatch(getCartTotal());
+  useEffect(() => {
+    dispatch(getCartTotal());
+  });
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -62,7 +65,7 @@ const Cart = () => {
           )}
           {cartItems?.items?.map((item) => (
             // <MenuItem menuItem={item} />
-            <CartItems menuItem={item} />
+            <CartItems key={item?.card?.info?.id} menuItem={item} />
           ))}
         </div>
       </div>

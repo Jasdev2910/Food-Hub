@@ -33,6 +33,7 @@ const RestaurantMenu = () => {
         "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
     );
 
+  console.log(categories);
   const toggleAccordion = (index) => {
     if (showIndex === index) {
       setShowIndex(null); // Close the accordion if it's already open
