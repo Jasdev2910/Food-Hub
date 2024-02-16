@@ -10,6 +10,7 @@ import { CAROUSEL_IMG } from "../utils/constants";
 import { WIDGET_CAROUSEL } from "../utils/constants";
 import CarouselItems from "./CarouselItems";
 import CarouselRes from "./CarouselRes";
+import InfiniteScroll from "react-infinite-scroll-component";
 
 const Body = () => {
   // const [listOfRes, setListOfRes] = useState([]);
@@ -23,16 +24,17 @@ const Body = () => {
   const restaurantList2 =
     restaurantData[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
 
-  console.log(restaurantData);
-  console.log(restaurantData[0]);
-  console.log(
-    restaurantData[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
-  );
-
   useEffect(() => {
     window.scrollTo(0, 0);
     setFilteredRestaurant(restaurantList);
   }, [restaurantList]);
+
+  // const fetchData = () => {
+  //   // const restaurantData = useRestaurantList();
+  //   setTimeout(() => {
+  //     setFilteredRestaurant(filteredRestaurant.concat(restaurantList));
+  //   }, 1000);
+  // };
 
   if (onlineStatus === false) {
     return (
@@ -156,6 +158,14 @@ const Body = () => {
             </Link>
           ))}
         </div>
+        {/* {filteredRestaurant && (
+          <InfiniteScroll
+            dataLength={filteredRestaurant.length} //This is important field to render the next data
+            next={fetchData}
+            hasMore={true}
+            loader={<Shimmer />}
+          ></InfiniteScroll>
+        )} */}
       </div>
     </div>
   );
