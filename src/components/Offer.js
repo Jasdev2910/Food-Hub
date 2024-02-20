@@ -11,7 +11,7 @@ const Offer = () => {
   const CardWithOffer = withOfferLabel(Card);
   const restaurantData = useRestaurantList(); // custom hook for list of restauranrt
   const restaurantList =
-    restaurantData[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
+    restaurantData[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);

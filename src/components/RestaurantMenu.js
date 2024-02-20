@@ -27,13 +27,12 @@ const RestaurantMenu = () => {
   }, []);
 
   const categories =
-    resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards?.filter(
+    resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards?.filter(
       (c) =>
         c?.card?.card?.["@type"] ===
         "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
     );
 
-  console.log(categories);
   const toggleAccordion = (index) => {
     if (showIndex === index) {
       setShowIndex(null); // Close the accordion if it's already open
@@ -42,6 +41,7 @@ const RestaurantMenu = () => {
     }
   };
 
+  console.log(categories);
   console.log(resInfo);
 
   const location = resInfo?.cards[0]?.card?.card?.info?.areaName;
@@ -66,31 +66,31 @@ const RestaurantMenu = () => {
           <div className="flex justify-between items-center">
             <div className="mx-3 py-5">
               <h1 className="text-3xl">
-                {resInfo?.cards[0]?.card?.card?.info?.name}
+                {resInfo?.cards[2]?.card?.card?.info?.name}
               </h1>
               <p className="font-light py-1">
-                {resInfo?.cards[0]?.card?.card?.info?.cuisines.join(", ")}
+                {resInfo?.cards[2]?.card?.card?.info?.cuisines.join(", ")}
               </p>
               <p className="font-light py-1">
-                {resInfo?.cards[0]?.card?.card?.info?.areaName}
+                {resInfo?.cards[2]?.card?.card?.info?.areaName}
               </p>
               <p className="font-light py-1">
-                {resInfo?.cards[0]?.card?.card?.info?.feeDetails?.message}
+                {resInfo?.cards[2]?.card?.card?.info?.feeDetails?.message}
               </p>
             </div>
             <div className="w-10 text-center text-lg">
               <h3>
                 <StarsIcon className="text-green-600 mr-1 medium" />
-                {resInfo?.cards[0]?.card?.card?.info?.avgRating}
+                {resInfo?.cards[2]?.card?.card?.info?.avgRating}
               </h3>
             </div>
           </div>
           <div className="max-w-3xl h-[0.5px] bg-slate-300 "></div>
           <div className="flex text-lg font-bold p-3">
-            <h3>{resInfo?.cards[0]?.card?.card?.info?.costForTwoMessage}</h3>
+            <h3>{resInfo?.cards[2]?.card?.card?.info?.costForTwoMessage}</h3>
             <h3 className="ml-7 flex items-center">
               <AccessTimeIcon />
-              {resInfo?.cards[0]?.card?.card?.info?.sla?.deliveryTime} Minutes
+              {resInfo?.cards[2]?.card?.card?.info?.sla?.deliveryTime} Minutes
             </h3>
           </div>
         </div>
