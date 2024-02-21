@@ -20,21 +20,18 @@ const Body = () => {
   const CardWithOffer = withOfferLabel(Card);
   const restaurantData = useRestaurantList(); // custom hook for list of restauranrt
   const restaurantList =
-    restaurantData[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
+    restaurantData.filteredRestaurant1[4]?.card?.card?.gridElements
+      ?.infoWithStyle?.restaurants;
   const restaurantList2 =
-    restaurantData[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
+    restaurantData?.filteredRestaurant1[1]?.card?.card?.gridElements
+      ?.infoWithStyle?.restaurants;
+
+  console.log(restaurantData);
 
   useEffect(() => {
     window.scrollTo(0, 0);
     setFilteredRestaurant(restaurantList);
   }, [restaurantList]);
-
-  // const fetchData = () => {
-  //   // const restaurantData = useRestaurantList();
-  //   setTimeout(() => {
-  //     setFilteredRestaurant(filteredRestaurant.concat(restaurantList));
-  //   }, 1000);
-  // };
 
   if (onlineStatus === false) {
     return (
@@ -44,27 +41,29 @@ const Body = () => {
     );
   }
 
-  return restaurantList?.length === undefined ? (
+  return restaurantData.loading ? (
     <Shimmer />
   ) : (
-    <div className="flex-col mx-24 pt-24 ">
+    <div className="flex-col md:mx-24 mx-6 md:pt-24 pt-16">
       <div className="pt-6">
-        <div className="text-2xl font-semibold ml-10">
-          <h2>{restaurantData[0]?.card?.card?.header?.title}</h2>
+        <div className="md:text-2xl font-semibold md:ml-10">
+          <h2>
+            {restaurantData?.filteredRestaurant1[0]?.card?.card?.header?.title}
+          </h2>
         </div>
-        <div>
+        <div className="">
           <Carousel
-            data={restaurantData[0]}
+            data={restaurantData?.filteredRestaurant1[0]}
             CAROUSEL_IMG={CAROUSEL_IMG}
-            minWidth={`min-w-[150px]`}
+            minWidth={`md:min-w-[150px] min-w-[70px]`}
           />
         </div>
       </div>
       <div>
-        <h2 className="text-2xl font-semibold ml-10 pb-4">
+        <h2 className="md:text-2xl font-semibold md:ml-10 md:pb-4">
           Best Offers for you
         </h2>
-        <div>
+        <div className="py-2">
           {/* <Carousel
             data={restaurantData[0]}
             CAROUSEL_IMG={WIDGET_CAROUSEL}
@@ -73,16 +72,16 @@ const Body = () => {
           <CarouselRes filteredRestaurant={restaurantList2} />
         </div>
       </div>
-      <div className=" mx-auto">
-        <div className="flex items-center">
-          <div className="text-2xl font-semibold ml-10 pb-4">
+      <div className="mx-auto">
+        <div className="flex flex-col md:flex">
+          <div className="md:text-2xl font-semibold md:ml-10 md:pb-4 pb-2">
             <h2>Restauraunts in Your Area</h2>
           </div>
 
-          <div className="flex items-center justify-between p-5">
-            <div className=" flex justify-between w-[100%] bg-gray-100 mx-40 rounded-full hover:shadow-xl hover:-translate-y-1 transition">
+          <div className="flex md:flex items-center justify-between md:p-5 mb-2 md:mb-0">
+            <div className=" flex justify-between w-full bg-gray-100 md:mr-20 mr-4 rounded-full hover:shadow-xl hover:-translate-y-1 transition">
               <input
-                className="w-full px-6 py-2 bg-transparent border-none outline-none"
+                className="md:w-2/5 w-[80%] md:px-6 px-2 md:py-2 py-1  bg-transparent border-none outline-none"
                 type="text"
                 data-testid="searchInput"
                 placeholder="Search Restauraunts"
@@ -92,7 +91,7 @@ const Body = () => {
                 }}
               />
               <button
-                className="w-7 mr-2 "
+                className="md:w-7 md:mr-2 "
                 type="search"
                 aria-label="search"
                 onClick={() => {
@@ -105,12 +104,12 @@ const Body = () => {
                   setFilteredRestaurant(filteredList);
                 }}
               >
-                <img className="w-8" alt="search-icon" src={search} />
+                <img className="md:w-8 w-4" alt="search-icon" src={search} />
               </button>
             </div>
             <div>
               <button
-                className="px-8 py-2 rounded-full bg-gray-100 hover:bg-gray-900 hover:text-white hover:shadow-2xl hover:-translate-y-1 transition"
+                className="md:px-8 px-3 md:py-2 py-1  md:mr-6 rounded-full bg-gray-100 hover:bg-gray-900 hover:text-white hover:shadow-2xl hover:-translate-y-1 transition"
                 onClick={() => {
                   const newResList = filteredRestaurant?.filter(
                     (res) => res?.info?.avgRating > 4
@@ -125,7 +124,7 @@ const Body = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-4 px-4 ">
+        <div className="grid grid-cols-2 md:grid-cols-4 md:px-4 ">
           {filteredRestaurant?.map((restaurant) => (
             <Link
               key={restaurant?.info?.id}

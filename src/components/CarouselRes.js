@@ -26,7 +26,7 @@ const CarouselRes = ({ filteredRestaurant }) => {
         <ArrowForwardIosIcon />
       </button> */}
       <div
-        className={`container scroll-smooth flex items-center overflow-x-scroll no-scrollbar`}
+        className={`container scroll-smooth flex items-center overflow-y-scroll no-scrollbar`}
       >
         {filteredRestaurant?.map((restaurant) => (
           <Link

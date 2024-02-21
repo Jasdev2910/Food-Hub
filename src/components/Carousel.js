@@ -16,8 +16,8 @@ const Carousel = ({ data, CAROUSEL_IMG, minWidth }) => {
   };
 
   return (
-    <div className="flex justify-between pb-11 ">
-      <button onClick={btnPressPrev} className="">
+    <div className="flex justify-between md:pb-11 ">
+      <button onClick={btnPressPrev} className="hidden md:visible">
         <ArrowBackIosIcon />
       </button>
       <div
@@ -30,7 +30,7 @@ const Carousel = ({ data, CAROUSEL_IMG, minWidth }) => {
         />
       </div>
 
-      <button onClick={btnPressNext} className="nextBtn">
+      <button onClick={btnPressNext} className="hidden md:visible">
         <ArrowForwardIosIcon />
       </button>
     </div>

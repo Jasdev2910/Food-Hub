@@ -8,7 +8,7 @@ const CarouselImg = ({ data, CAROUSEL_IMG, minWidth }) => {
     return data?.card?.card?.imageGridCards?.info?.map((item) =>
       item?.action?.link?.includes("menu") ? (
         <Link key={item?.entityId} to={"/restaurant/" + item?.entityId}>
-          <div className={`mx-6  ${minWidth} box-border cursor-pointer`}>
+          <div className={`md:mx-6  ${minWidth} box-border cursor-pointer`}>
             <div>
               <img
                 className=""
@@ -28,7 +28,7 @@ const CarouselImg = ({ data, CAROUSEL_IMG, minWidth }) => {
               : item?.entityId)
           }
         >
-          <div className={`mx-6  ${minWidth} box-border cursor-pointer`}>
+          <div className={`mmd:x-6  ${minWidth} box-border cursor-pointer`}>
             <div>
               <img
                 className=""
